@@ -4,9 +4,8 @@
  */
 package view;
 
-import java.awt.Cursor;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
+import javax.swing.JOptionPane;
+import dao.UserDAO;
 /**
  *
  * @author nabil
@@ -20,30 +19,6 @@ public class LoginFrame extends javax.swing.JFrame {
      */
 public LoginFrame() {
     initComponents();
-
-    btnLogin.addActionListener(e -> {
-        new Dashboard().setVisible(true);
-        dispose();
-    });
-
-    lblRegisterLink.setCursor(new Cursor(Cursor.HAND_CURSOR));
-    lblForgotPassword.setCursor(new Cursor(Cursor.HAND_CURSOR));
-
-    lblRegisterLink.addMouseListener(new MouseAdapter() {
-        @Override
-        public void mouseClicked(MouseEvent e) {
-            new RegisterFrame().setVisible(true);
-            dispose();
-        }
-    });
-
-    lblForgotPassword.addMouseListener(new MouseAdapter() {
-        @Override
-        public void mouseClicked(MouseEvent e) {
-            new ForgotPasswordFrame().setVisible(true);
-            dispose();
-        }
-    });
 }
     
 
@@ -74,11 +49,11 @@ public LoginFrame() {
         txtEmail = new javax.swing.JTextField();
         lblEmail = new javax.swing.JLabel();
         lblPassword = new javax.swing.JLabel();
-        txtPassword = new javax.swing.JTextField();
         btnLogin = new javax.swing.JButton();
         lblRegisterLink = new javax.swing.JLabel();
         lblForgotPassword = new javax.swing.JLabel();
         btnGuest = new javax.swing.JButton();
+        jPasswordField1 = new javax.swing.JPasswordField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("HerVoice_Login");
@@ -218,17 +193,20 @@ public LoginFrame() {
         lblPassword.setForeground(new java.awt.Color(90, 90, 90));
         lblPassword.setText("Password");
 
-        txtPassword.setText(" Masukkan password");
-        txtPassword.addActionListener(this::txtPasswordActionPerformed);
-
         btnLogin.setBackground(new java.awt.Color(119, 47, 80));
         btnLogin.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         btnLogin.setForeground(new java.awt.Color(255, 255, 255));
         btnLogin.setText("Masuk");
+        btnLogin.addActionListener(this::btnLoginActionPerformed);
 
         lblRegisterLink.setFont(new java.awt.Font("Segoe UI", 0, 11)); // NOI18N
         lblRegisterLink.setForeground(new java.awt.Color(150, 120, 130));
         lblRegisterLink.setText("Belum punya akun? Daftar gratis");
+        lblRegisterLink.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblRegisterLinkMouseClicked(evt);
+            }
+        });
 
         lblForgotPassword.setForeground(new java.awt.Color(51, 51, 255));
         lblForgotPassword.setText("Lupa password? ");
@@ -239,15 +217,17 @@ public LoginFrame() {
         btnGuest.setText("Masuk sebagai Tamu");
         btnGuest.addActionListener(this::btnGuestActionPerformed);
 
+        jPasswordField1.setText("jPasswordField1");
+
         javax.swing.GroupLayout pnlLoginFormLayout = new javax.swing.GroupLayout(pnlLoginForm);
         pnlLoginForm.setLayout(pnlLoginFormLayout);
         pnlLoginFormLayout.setHorizontalGroup(
             pnlLoginFormLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlLoginFormLayout.createSequentialGroup()
-                .addGroup(pnlLoginFormLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(pnlLoginFormLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(pnlLoginFormLayout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(txtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 325, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(txtEmail))
                     .addGroup(pnlLoginFormLayout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(lblEmail))
@@ -261,10 +241,8 @@ public LoginFrame() {
                         .addContainerGap()
                         .addComponent(lblSubtitle))
                     .addGroup(pnlLoginFormLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(pnlLoginFormLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(lblForgotPassword)
-                            .addComponent(txtPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 325, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(242, 242, 242)
+                        .addComponent(lblForgotPassword))
                     .addGroup(pnlLoginFormLayout.createSequentialGroup()
                         .addGap(87, 87, 87)
                         .addGroup(pnlLoginFormLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -272,7 +250,10 @@ public LoginFrame() {
                             .addComponent(btnLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(pnlLoginFormLayout.createSequentialGroup()
                         .addGap(74, 74, 74)
-                        .addComponent(lblRegisterLink, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(lblRegisterLink, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(pnlLoginFormLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jPasswordField1)))
                 .addContainerGap(16, Short.MAX_VALUE))
         );
         pnlLoginFormLayout.setVerticalGroup(
@@ -289,8 +270,8 @@ public LoginFrame() {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(lblPassword)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txtPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPasswordField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(14, 14, 14)
                 .addComponent(lblForgotPassword)
                 .addGap(24, 24, 24)
                 .addComponent(btnLogin)
@@ -298,7 +279,7 @@ public LoginFrame() {
                 .addComponent(btnGuest)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(lblRegisterLink)
-                .addContainerGap(97, Short.MAX_VALUE))
+                .addContainerGap(89, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout pnlMainLayout = new javax.swing.GroupLayout(pnlMain);
@@ -348,33 +329,54 @@ public LoginFrame() {
     dispose();
     }//GEN-LAST:event_btnGuestActionPerformed
 
-    private void txtPasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPasswordActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtPasswordActionPerformed
+    private void lblRegisterLinkMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblRegisterLinkMouseClicked
+  RegisterFrame register = new RegisterFrame();
+    register.setLocationRelativeTo(null); // biar muncul di tengah
+    register.setVisible(true);
+    }//GEN-LAST:event_lblRegisterLinkMouseClicked
+
+    private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginActionPerformed
+    String email = txtEmail.getText().trim();
+    String password = String.valueOf(jPasswordField1.getPassword());
+
+    if (email.isEmpty()) {
+        JOptionPane.showMessageDialog(this, "Email tidak boleh kosong!");
+        return;
+    }
+
+    if (password.isEmpty()) {
+        JOptionPane.showMessageDialog(this, "Password tidak boleh kosong!");
+        return;
+    }
+
+    UserDAO dao = new UserDAO();
+
+    if (dao.login(email, password)) {
+
+        JOptionPane.showMessageDialog(this, "Login berhasil!");
+
+        Dashboard dashboard = new Dashboard();
+        dashboard.setLocationRelativeTo(null);
+        dashboard.setVisible(true);
+
+        dispose();
+
+    } else {
+
+        JOptionPane.showMessageDialog(this, "Email atau password salah!");
+
+    }
+    }//GEN-LAST:event_btnLoginActionPerformed
 
     /**
      * @param args the command line arguments
      */
     public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ReflectiveOperationException | javax.swing.UnsupportedLookAndFeelException ex) {
-            logger.log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
+    config.Koneksi.getConnection();
 
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(() -> new LoginFrame().setVisible(true));
+    java.awt.EventQueue.invokeLater(() -> {
+        new LoginFrame().setVisible(true);
+    });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -382,6 +384,7 @@ public LoginFrame() {
     private javax.swing.JButton btnLogin;
     private javax.swing.JLabel jDashboardHeader;
     private javax.swing.JLabel jHerVoiceHeader;
+    private javax.swing.JPasswordField jPasswordField1;
     private javax.swing.JLabel lblDescription;
     private javax.swing.JLabel lblEmail;
     private javax.swing.JLabel lblFooterInfo;
@@ -400,6 +403,5 @@ public LoginFrame() {
     private javax.swing.JPanel pnlMain;
     private javax.swing.JSeparator sepBranding;
     private javax.swing.JTextField txtEmail;
-    private javax.swing.JTextField txtPassword;
     // End of variables declaration//GEN-END:variables
 }

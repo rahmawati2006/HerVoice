@@ -169,7 +169,7 @@ public SplashScreen() {
      * @param args the command line arguments
      */
 public static void main(String args[]) {
-
+    config.Koneksi.getConnection();
     java.awt.EventQueue.invokeLater(new Runnable() {
         @Override
         public void run() {

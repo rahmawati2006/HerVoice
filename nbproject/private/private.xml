@@ -3,15 +3,16 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/nabil/Downloads/HerVoice-main/HerVoice-main/src/view/ForgotPasswordFrame.java</file>
-            <file>file:/C:/Users/nabil/Downloads/HerVoice-main/HerVoice-main/src/view/LoginFrame.java</file>
-            <file>file:/C:/Users/nabil/Downloads/HerVoice-main/HerVoice-main/src/view/RegisterFrame.java</file>
-            <file>file:/C:/Users/nabil/Downloads/HerVoice-main/HerVoice-main/src/view/Dashboard.java</file>
-            <file>file:/C:/Users/nabil/Downloads/HerVoice-main/HerVoice-main/src/view/ForumDiskusi.java</file>
-            <file>file:/C:/Users/nabil/Downloads/HerVoice-main/HerVoice-main/src/view/FormLaporan.java</file>
-            <file>file:/C:/Users/nabil/Downloads/HerVoice-main/HerVoice-main/src/view/PanelAdmin.java</file>
-            <file>file:/C:/Users/nabil/Downloads/HerVoice-main/HerVoice-main/src/model/User.java</file>
-            <file>file:/C:/Users/nabil/Downloads/HerVoice-main/HerVoice-main/src/view/FormPengaturan.java</file>
+            <file>file:/C:/Users/mulya/Downloads/HerVoice/src/config/Koneksi.java</file>
+            <file>file:/C:/Users/mulya/Downloads/HerVoice/src/dao/UserDAO.java</file>
+            <file>file:/C:/Users/mulya/Downloads/HerVoice/src/view/RegisterFrame.java</file>
+            <file>file:/C:/Users/mulya/Downloads/HerVoice/src/view/LoginFrame.java</file>
+            <file>file:/C:/Users/mulya/Downloads/HerVoice/src/session/Session.java</file>
+            <file>file:/C:/Users/mulya/Downloads/HerVoice/src/view/Dashboard.java</file>
+            <file>file:/C:/Users/mulya/Downloads/HerVoice/src/dao/ForumDAO.java</file>
+            <file>file:/C:/Users/mulya/Downloads/HerVoice/src/view/ForumDiskusi.java</file>
+            <file>file:/C:/Users/mulya/Downloads/HerVoice/src/dao/LaporanDAO.java</file>
+            <file>file:/C:/Users/mulya/Downloads/HerVoice/src/view/FormLaporan.java</file>
         </group>
     </open-files>
 </project-private>

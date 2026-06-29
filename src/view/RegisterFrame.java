@@ -3,7 +3,8 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package view;
-
+import javax.swing.JOptionPane;
+import dao.UserDAO;
 /**
  *
  * @author nabil
@@ -231,6 +232,7 @@ public class RegisterFrame extends javax.swing.JFrame {
         btnRegister.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         btnRegister.setForeground(new java.awt.Color(255, 255, 255));
         btnRegister.setText("Daftar Sekarang");
+        btnRegister.addActionListener(this::btnRegisterActionPerformed);
 
         lblLoginLink.setFont(new java.awt.Font("Segoe UI", 0, 11)); // NOI18N
         lblLoginLink.setForeground(new java.awt.Color(150, 120, 130));
@@ -379,6 +381,78 @@ public class RegisterFrame extends javax.swing.JFrame {
     private void txtNamaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNamaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtNamaActionPerformed
+
+    private void btnRegisterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegisterActionPerformed
+    String nama = txtNama.getText().trim();
+    String email = txtEmail.getText().trim();
+    String password = txtPassword.getText().trim();
+    String konfirmasi = txtUlangiPassword.getText().trim();
+    String role = cmbRole.getSelectedItem().toString();
+
+    if (nama.isEmpty()) {
+        JOptionPane.showMessageDialog(this, "Nama lengkap tidak boleh kosong!");
+        txtNama.requestFocus();
+        return;
+    }
+
+    if (email.isEmpty()) {
+        JOptionPane.showMessageDialog(this, "Email tidak boleh kosong!");
+        txtEmail.requestFocus();
+        return;
+    }
+
+    if (!email.matches("^[A-Za-z0-9+_.-]+@[A-Za-z0-9.-]+$")) {
+        JOptionPane.showMessageDialog(this, "Format email tidak valid!");
+        txtEmail.requestFocus();
+        return;
+    }
+
+    if (password.isEmpty()) {
+        JOptionPane.showMessageDialog(this, "Password tidak boleh kosong!");
+        txtPassword.requestFocus();
+        return;
+    }
+
+    if (password.length() < 8) {
+        JOptionPane.showMessageDialog(this, "Password minimal 8 karakter!");
+        txtPassword.requestFocus();
+        return;
+    }
+
+    if (konfirmasi.isEmpty()) {
+        JOptionPane.showMessageDialog(this, "Konfirmasi password tidak boleh kosong!");
+        txtUlangiPassword.requestFocus();
+        return;
+    }
+
+    if (!password.equals(konfirmasi)) {
+        JOptionPane.showMessageDialog(this, "Konfirmasi password tidak sama!");
+        txtUlangiPassword.requestFocus();
+        return;
+    }
+    UserDAO dao = new UserDAO();
+
+boolean berhasil = dao.register(
+    nama,
+    email,
+    password,
+    role,
+    chkAnonim.isSelected()
+);
+
+if (berhasil) {
+
+    JOptionPane.showMessageDialog(this, "Registrasi berhasil!");
+
+    new LoginFrame().setVisible(true);
+    dispose();
+
+} else {
+
+    JOptionPane.showMessageDialog(this, "Registrasi gagal!");
+
+}
+    }//GEN-LAST:event_btnRegisterActionPerformed
 
     /**
      * @param args the command line arguments

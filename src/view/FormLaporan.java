@@ -3,6 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package view;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -11,6 +12,7 @@ package view;
 public class FormLaporan extends javax.swing.JFrame {
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(FormLaporan.class.getName());
+    
 
     /**
      * Creates new form FormLaporan
@@ -138,6 +140,7 @@ public class FormLaporan extends javax.swing.JFrame {
 
         jButton4.setForeground(new java.awt.Color(44, 26, 34));
         jButton4.setText("Buat Postingan");
+        jButton4.addActionListener(this::jButton4ActionPerformed);
 
         jButton5.setForeground(new java.awt.Color(44, 26, 34));
         jButton5.setText("Buat Laporan");
@@ -145,6 +148,7 @@ public class FormLaporan extends javax.swing.JFrame {
 
         jButton6.setForeground(new java.awt.Color(44, 26, 34));
         jButton6.setText("Artikel");
+        jButton6.addActionListener(this::jButton6ActionPerformed);
 
         javax.swing.GroupLayout jPanel23Layout = new javax.swing.GroupLayout(jPanel23);
         jPanel23.setLayout(jPanel23Layout);
@@ -443,8 +447,10 @@ public class FormLaporan extends javax.swing.JFrame {
         jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Pasangan", "Mantan Pasangan", "Keluarga", "Teman", "Rekan Kerja", "Atasan", "Guru / Dosen", "Orang Tidak Dikenal", "Lainnya" }));
 
         jButton1.setText("Batal");
+        jButton1.addActionListener(this::jButton1ActionPerformed);
 
         jButton2.setText("Kirim Laporan");
+        jButton2.addActionListener(this::jButton2ActionPerformed);
 
         jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Tanggal", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31" }));
         jComboBox3.setToolTipText("Tgl");
@@ -577,20 +583,89 @@ public class FormLaporan extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextField1ActionPerformed
 
     private void jRadioButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton2ActionPerformed
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_jRadioButton2ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        // TODO add your handling code here:
+    Dashboard dashboard = new Dashboard();
+    dashboard.setVisible(true);
+    this.dispose();
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-        // TODO add your handling code here:
+    this.dispose();
+    new FormLaporan().setVisible(true);
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void jComboBox3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox3ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jComboBox3ActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+    ForumDiskusi forum = new ForumDiskusi();
+    forum.setVisible(true);
+    this.dispose();
+    }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+    FormArtikelEdukasi artikel = new FormArtikelEdukasi();
+    artikel.setVisible(true);
+    this.dispose();
+    }//GEN-LAST:event_jButton6ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    jComboBox1.setSelectedIndex(0);
+    jComboBox2.setSelectedIndex(0);
+    jComboBox3.setSelectedIndex(0);
+    jComboBox4.setSelectedIndex(0);
+    jComboBox5.setSelectedIndex(0);
+
+    jTextField1.setText("");
+    jTextField2.setText("");
+
+    bgStatusLaporan.clearSelection();
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+                                               // 1. Ambil data dari input Swing kamu
+        String kategoriKekerasan = jComboBox1.getSelectedItem().toString(); // Contoh: KDRT
+        String lokasi = jTextField1.getText().trim();                       // Contoh: Jakarta
+        String deskripsiKejadian = jTextField2.getText().trim();             // Contoh: Cerita singkat...
+        String hubunganPelaku = jComboBox2.getSelectedItem().toString();    // Contoh: Pasangan
+
+        // 2. Validasi input teks default kosong
+        if (lokasi.isEmpty() || lokasi.equals("Kota / Daerah Kejadian") || 
+            deskripsiKejadian.isEmpty() || deskripsiKejadian.equals("Ceritakan apa yang terjadi secara singkat")) {
+            
+            JOptionPane.showMessageDialog(this, "Silakan lengkapi Lokasi dan Deskripsi kejadian terlebih dahulu.");
+            return;
+        }
+
+        // 3. Kita racik Judul otomatis & gabungkan detail lokasi/hubungan ke dalam kolom Isi
+        String judulOtomatis = "Laporan Kasus " + kategoriKekerasan + " di " + lokasi;
+        String isiLengkap = "Deskripsi: " + deskripsiKejadian + "\nHubungan dengan pelaku: " + hubunganPelaku;
+
+        // 4. Panggil DAO untuk eksekusi ke MySQL
+        dao.LaporanDAO lDao = new dao.LaporanDAO();
+        boolean sukses = lDao.kirimLaporanLengkap(
+                session.Session.id, 
+                judulOtomatis, 
+                kategoriKekerasan, 
+                isiLengkap
+        );
+
+        // 5. Validasi respons akhir
+        if (sukses) {
+            JOptionPane.showMessageDialog(
+                    this,
+                    "Laporan berhasil dikirim.\nTerima kasih telah melapor. Identitas Anda aman.");
+            
+            this.dispose();
+            new Dashboard().setVisible(true);
+        } else {
+            JOptionPane.showMessageDialog(this, "Gagal mengirim laporan. Periksa kembali konsol error NetBeans.");
+        }
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments

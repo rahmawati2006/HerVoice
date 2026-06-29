@@ -94,7 +94,6 @@ public class FormArtikelEdukasi extends javax.swing.JFrame {
         jLabel8 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(730, 504));
         setResizable(false);
 
         pnlMain.setPreferredSize(new java.awt.Dimension(730, 484));
@@ -230,6 +229,11 @@ public class FormArtikelEdukasi extends javax.swing.JFrame {
 
         pnlMenuDashboard.setBackground(new java.awt.Color(255, 255, 255));
         pnlMenuDashboard.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        pnlMenuDashboard.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                pnlMenuDashboardMouseClicked(evt);
+            }
+        });
 
         lblMenuDashboard.setText("Dashboard");
 
@@ -255,6 +259,11 @@ public class FormArtikelEdukasi extends javax.swing.JFrame {
 
         lblMenuForumDiskusi.setForeground(new java.awt.Color(44, 26, 34));
         lblMenuForumDiskusi.setText("Forum Diskusi");
+        lblMenuForumDiskusi.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblMenuForumDiskusiMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout pnlMenuForumDiskusiLayout = new javax.swing.GroupLayout(pnlMenuForumDiskusi);
         pnlMenuForumDiskusi.setLayout(pnlMenuForumDiskusiLayout);
@@ -278,6 +287,11 @@ public class FormArtikelEdukasi extends javax.swing.JFrame {
 
         lblMenuLaporanKasus.setForeground(new java.awt.Color(44, 26, 34));
         lblMenuLaporanKasus.setText("Laporan Kasus");
+        lblMenuLaporanKasus.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblMenuLaporanKasusMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout pnlMenuLaporanKasusLayout = new javax.swing.GroupLayout(pnlMenuLaporanKasus);
         pnlMenuLaporanKasus.setLayout(pnlMenuLaporanKasusLayout);
@@ -301,6 +315,11 @@ public class FormArtikelEdukasi extends javax.swing.JFrame {
 
         lblMenuArtikelEdukasi.setForeground(new java.awt.Color(44, 26, 34));
         lblMenuArtikelEdukasi.setText("Artikel  Edukasi");
+        lblMenuArtikelEdukasi.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblMenuArtikelEdukasiMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout pnlMenuArtikelEdukasiLayout = new javax.swing.GroupLayout(pnlMenuArtikelEdukasi);
         pnlMenuArtikelEdukasi.setLayout(pnlMenuArtikelEdukasiLayout);
@@ -324,6 +343,11 @@ public class FormArtikelEdukasi extends javax.swing.JFrame {
 
         lblMenuKonselorOnline.setForeground(new java.awt.Color(44, 26, 34));
         lblMenuKonselorOnline.setText("Konselor Online");
+        lblMenuKonselorOnline.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblMenuKonselorOnlineMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout pnlMenuKonselorOnlineLayout = new javax.swing.GroupLayout(pnlMenuKonselorOnline);
         pnlMenuKonselorOnline.setLayout(pnlMenuKonselorOnlineLayout);
@@ -809,9 +833,43 @@ public class FormArtikelEdukasi extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnDashboardActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDashboardActionPerformed
-        // TODO add your handling code here:
+    Dashboard dashboard = new Dashboard();
+    dashboard.setVisible(true);
+    this.dispose();
     }//GEN-LAST:event_btnDashboardActionPerformed
 
+    private void pnlMenuDashboardMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnlMenuDashboardMouseClicked
+    Dashboard dashboard = new Dashboard();
+    dashboard.setVisible(true);
+    this.dispose();
+    }//GEN-LAST:event_pnlMenuDashboardMouseClicked
+
+    private void lblMenuForumDiskusiMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblMenuForumDiskusiMouseClicked
+    ForumDiskusi forum = new ForumDiskusi();
+    forum.setVisible(true);
+    this.dispose();
+    }//GEN-LAST:event_lblMenuForumDiskusiMouseClicked
+
+    private void lblMenuLaporanKasusMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblMenuLaporanKasusMouseClicked
+    FormLaporan laporan = new FormLaporan();
+    laporan.setVisible(true);
+    this.dispose();
+    }//GEN-LAST:event_lblMenuLaporanKasusMouseClicked
+
+    private void lblMenuArtikelEdukasiMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblMenuArtikelEdukasiMouseClicked
+    FormArtikelEdukasi artikel = new FormArtikelEdukasi();
+    artikel.setVisible(true);
+    this.dispose();
+    }//GEN-LAST:event_lblMenuArtikelEdukasiMouseClicked
+
+    private void lblMenuKonselorOnlineMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblMenuKonselorOnlineMouseClicked
+    FormKonselorOnline konselor = new FormKonselorOnline();
+    konselor.setVisible(true);
+    this.dispose();
+    }//GEN-LAST:event_lblMenuKonselorOnlineMouseClicked
+
+    
+    
     /**
      * @param args the command line arguments
      */

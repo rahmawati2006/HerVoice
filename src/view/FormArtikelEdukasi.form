@@ -11,9 +11,6 @@
   </NonVisualComponents>
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="3"/>
-    <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-      <Dimension value="[730, 504]"/>
-    </Property>
     <Property name="resizable" type="boolean" value="false"/>
   </Properties>
   <SyntheticProperties>
@@ -393,6 +390,9 @@
                   </Border>
                 </Property>
               </Properties>
+              <Events>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="pnlMenuDashboardMouseClicked"/>
+              </Events>
 
               <Layout>
                 <DimensionLayout dim="0">
@@ -462,6 +462,9 @@
                     </Property>
                     <Property name="text" type="java.lang.String" value="Forum Diskusi"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lblMenuForumDiskusiMouseClicked"/>
+                  </Events>
                 </Component>
               </SubComponents>
             </Container>
@@ -505,6 +508,9 @@
                     </Property>
                     <Property name="text" type="java.lang.String" value="Laporan Kasus"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lblMenuLaporanKasusMouseClicked"/>
+                  </Events>
                 </Component>
               </SubComponents>
             </Container>
@@ -548,6 +554,9 @@
                     </Property>
                     <Property name="text" type="java.lang.String" value="Artikel  Edukasi"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lblMenuArtikelEdukasiMouseClicked"/>
+                  </Events>
                 </Component>
               </SubComponents>
             </Container>
@@ -591,6 +600,9 @@
                     </Property>
                     <Property name="text" type="java.lang.String" value="Konselor Online"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lblMenuKonselorOnlineMouseClicked"/>
+                  </Events>
                 </Component>
               </SubComponents>
             </Container>

@@ -3,6 +3,8 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package view;
+import dao.ForumDAO;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -79,7 +81,6 @@ public class ForumDiskusi extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(700, 500));
 
         pnlMain.setBackground(new java.awt.Color(139, 61, 90));
         pnlMain.setPreferredSize(new java.awt.Dimension(700, 30));
@@ -251,6 +252,11 @@ public class ForumDiskusi extends javax.swing.JFrame {
         jPanel30.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         jLabel67.setText("Dashboard");
+        jLabel67.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel67MouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel30Layout = new javax.swing.GroupLayout(jPanel30);
         jPanel30.setLayout(jPanel30Layout);
@@ -271,6 +277,11 @@ public class ForumDiskusi extends javax.swing.JFrame {
 
         jPanel31.setBackground(new java.awt.Color(245, 224, 229));
         jPanel31.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jPanel31.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jPanel31MouseClicked(evt);
+            }
+        });
 
         jLabel68.setBackground(new java.awt.Color(245, 224, 229));
         jLabel68.setForeground(new java.awt.Color(44, 26, 34));
@@ -298,6 +309,11 @@ public class ForumDiskusi extends javax.swing.JFrame {
 
         jLabel69.setForeground(new java.awt.Color(44, 26, 34));
         jLabel69.setText("Laporan Kasus");
+        jLabel69.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel69MouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel32Layout = new javax.swing.GroupLayout(jPanel32);
         jPanel32.setLayout(jPanel32Layout);
@@ -321,6 +337,11 @@ public class ForumDiskusi extends javax.swing.JFrame {
 
         jLabel72.setForeground(new java.awt.Color(44, 26, 34));
         jLabel72.setText("Artikel Edukasi");
+        jLabel72.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel72MouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel35Layout = new javax.swing.GroupLayout(jPanel35);
         jPanel35.setLayout(jPanel35Layout);
@@ -344,6 +365,11 @@ public class ForumDiskusi extends javax.swing.JFrame {
 
         jLabel73.setForeground(new java.awt.Color(44, 26, 34));
         jLabel73.setText("Konselor Online");
+        jLabel73.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel73MouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel36Layout = new javax.swing.GroupLayout(jPanel36);
         jPanel36.setLayout(jPanel36Layout);
@@ -498,8 +524,10 @@ public class ForumDiskusi extends javax.swing.JFrame {
         jLabel12.setText("Aku pernah di posisimu. Semangat ya, kamu tidak sendiri.");
 
         jTextField1.setText("Tulis komentar...");
+        jTextField1.addActionListener(this::jTextField1ActionPerformed);
 
         jButton4.setText("Kirim");
+        jButton4.addActionListener(this::jButton4ActionPerformed);
 
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
@@ -597,17 +625,87 @@ public class ForumDiskusi extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
+    Dashboard dashboard = new Dashboard();
+    dashboard.setVisible(true);
+    this.dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
+    this.dispose();
+    new ForumDiskusi().setVisible(true);
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        // TODO add your handling code here:
+    javax.swing.JOptionPane.showMessageDialog(
+            this,
+            "Link forum berhasil disalin.");
     }//GEN-LAST:event_jButton3ActionPerformed
 
+    private void jLabel67MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel67MouseClicked
+    Dashboard dashboard = new Dashboard();
+    dashboard.setVisible(true);
+    this.dispose();
+    }//GEN-LAST:event_jLabel67MouseClicked
+
+    private void jPanel31MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel31MouseClicked
+    new ForumDiskusi().setVisible(true);
+    this.dispose();
+    }//GEN-LAST:event_jPanel31MouseClicked
+
+    private void jLabel69MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel69MouseClicked
+    new FormLaporan().setVisible(true);
+    this.dispose();
+    }//GEN-LAST:event_jLabel69MouseClicked
+
+    private void jLabel72MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel72MouseClicked
+    new FormArtikelEdukasi().setVisible(true);
+    this.dispose();
+    }//GEN-LAST:event_jLabel72MouseClicked
+
+    private void jLabel73MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel73MouseClicked
+    new FormKonselorOnline().setVisible(true);
+    this.dispose();
+    }//GEN-LAST:event_jLabel73MouseClicked
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+ String komentar = jTextField1.getText().trim();
+
+        // 1. Validasi input komentar kosong
+        if (komentar.isEmpty() || komentar.equals("Tulis komentar...")) {
+            javax.swing.JOptionPane.showMessageDialog(
+                    this,
+                    "Silakan tulis komentar terlebih dahulu.");
+            return;
+        }
+
+        // 2. Kirim komentar ke database via ForumDAO
+        ForumDAO fDao = new ForumDAO();
+        
+        // Menggunakan session.Session.id yang sudah kamu set saat login
+        // Serta melemparkan teks komentar dari jTextField1
+        boolean sukses = fDao.tambahPostingan(session.Session.id, komentar);
+
+        if (sukses) {
+            javax.swing.JOptionPane.showMessageDialog(
+                    this,
+                    "Komentar berhasil dikirim!");
+            jTextField1.setText(""); // Reset text field setelah sukses
+            
+            // NOTE: Jika ke depannya kamu membuat area list komentar dinamis,
+            // kamu bisa memanggil method refresh list di sini.
+        } else {
+            javax.swing.JOptionPane.showMessageDialog(
+                    this,
+                    "Gagal mengirim komentar ke database.");
+        }
+    }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    if (jTextField1.getText().equals("Tulis komentar...")) {
+        jTextField1.setText("");
+    }
+    }//GEN-LAST:event_jTextField1ActionPerformed
+    
     /**
      * @param args the command line arguments
      */

@@ -12,6 +12,7 @@ public class FormKonselorOnline extends javax.swing.JFrame {
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(FormKonselorOnline.class.getName());
 
+    
     /**
      * Creates new form FormKonselorOnline
      */
@@ -220,6 +221,11 @@ public class FormKonselorOnline extends javax.swing.JFrame {
         pnlMenuDashboard.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         lblMenuDashboard.setText("Dashboard");
+        lblMenuDashboard.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblMenuDashboardMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout pnlMenuDashboardLayout = new javax.swing.GroupLayout(pnlMenuDashboard);
         pnlMenuDashboard.setLayout(pnlMenuDashboardLayout);
@@ -240,6 +246,11 @@ public class FormKonselorOnline extends javax.swing.JFrame {
 
         pnlMenuForumDiskusi.setBackground(new java.awt.Color(255, 255, 255));
         pnlMenuForumDiskusi.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        pnlMenuForumDiskusi.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                pnlMenuForumDiskusiMouseClicked(evt);
+            }
+        });
 
         lblMenuForumDiskusi.setForeground(new java.awt.Color(44, 26, 34));
         lblMenuForumDiskusi.setText("Forum Diskusi");
@@ -263,6 +274,11 @@ public class FormKonselorOnline extends javax.swing.JFrame {
 
         pnlMenuLaporanKasus.setBackground(new java.awt.Color(255, 255, 255));
         pnlMenuLaporanKasus.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        pnlMenuLaporanKasus.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                pnlMenuLaporanKasusMouseClicked(evt);
+            }
+        });
 
         lblMenuLaporanKasus.setForeground(new java.awt.Color(44, 26, 34));
         lblMenuLaporanKasus.setText("Laporan Kasus");
@@ -289,6 +305,11 @@ public class FormKonselorOnline extends javax.swing.JFrame {
 
         lblMenuArtikelEdukasi.setForeground(new java.awt.Color(44, 26, 34));
         lblMenuArtikelEdukasi.setText("Artikel  Edukasi");
+        lblMenuArtikelEdukasi.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblMenuArtikelEdukasiMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout pnlMenuArtikelEdukasiLayout = new javax.swing.GroupLayout(pnlMenuArtikelEdukasi);
         pnlMenuArtikelEdukasi.setLayout(pnlMenuArtikelEdukasiLayout);
@@ -312,6 +333,11 @@ public class FormKonselorOnline extends javax.swing.JFrame {
 
         lblMenuKonselorOnline.setForeground(new java.awt.Color(44, 26, 34));
         lblMenuKonselorOnline.setText("Konselor Online");
+        lblMenuKonselorOnline.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblMenuKonselorOnlineMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout pnlMenuKonselorOnlineLayout = new javax.swing.GroupLayout(pnlMenuKonselorOnline);
         pnlMenuKonselorOnline.setLayout(pnlMenuKonselorOnlineLayout);
@@ -638,6 +664,7 @@ public class FormKonselorOnline extends javax.swing.JFrame {
         jTextField1.setText("Ketik pesan...");
 
         jButton1.setText("Kirim");
+        jButton1.addActionListener(this::jButton1ActionPerformed);
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -739,7 +766,6 @@ public class FormKonselorOnline extends javax.swing.JFrame {
             .addComponent(pnlTopMenu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(pnlQuickAction, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlMainLayout.createSequentialGroup()
-                .addGap(0, 0, 0)
                 .addComponent(pnlNavigation, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
                 .addComponent(pnlKonselorContent, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -772,15 +798,50 @@ public class FormKonselorOnline extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(pnlMain, javax.swing.GroupLayout.DEFAULT_SIZE, 452, Short.MAX_VALUE)
-                .addContainerGap())
+                .addGap(0, 0, 0))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnDashboardActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDashboardActionPerformed
-        // TODO add your handling code here:
+    Dashboard dashboard = new Dashboard();
+    dashboard.setVisible(true);
+    this.dispose();
     }//GEN-LAST:event_btnDashboardActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void lblMenuDashboardMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblMenuDashboardMouseClicked
+    Dashboard dashboard = new Dashboard();
+    dashboard.setVisible(true);
+    this.dispose();
+    }//GEN-LAST:event_lblMenuDashboardMouseClicked
+
+    private void pnlMenuForumDiskusiMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnlMenuForumDiskusiMouseClicked
+    ForumDiskusi forum = new ForumDiskusi();
+    forum.setVisible(true);
+    this.dispose();
+    }//GEN-LAST:event_pnlMenuForumDiskusiMouseClicked
+
+    private void pnlMenuLaporanKasusMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnlMenuLaporanKasusMouseClicked
+    this.dispose();
+    new FormLaporan().setVisible(true);
+    }//GEN-LAST:event_pnlMenuLaporanKasusMouseClicked
+
+    private void lblMenuArtikelEdukasiMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblMenuArtikelEdukasiMouseClicked
+    FormArtikelEdukasi artikel = new FormArtikelEdukasi();
+    artikel.setVisible(true);
+    this.dispose();
+    }//GEN-LAST:event_lblMenuArtikelEdukasiMouseClicked
+
+    private void lblMenuKonselorOnlineMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblMenuKonselorOnlineMouseClicked
+    FormKonselorOnline konselor = new FormKonselorOnline();
+    konselor.setVisible(true);
+    this.dispose();
+    }//GEN-LAST:event_lblMenuKonselorOnlineMouseClicked
 
     /**
      * @param args the command line arguments

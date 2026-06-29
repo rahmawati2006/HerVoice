@@ -6,6 +6,7 @@ package view;
 import java.awt.Cursor;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import session.Session;
 /**
  *
  * @author mulya
@@ -19,6 +20,9 @@ public class Dashboard extends javax.swing.JFrame {
      */
     public Dashboard() {
         initComponents();
+lblFooterUserInfo.setText(
+    "Login sebagai : " + Session.nama + " (" + Session.role + ")"
+);
 
     btnDashboard.addActionListener(e -> {
         new Dashboard().setVisible(true);
