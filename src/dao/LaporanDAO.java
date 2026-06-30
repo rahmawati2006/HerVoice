@@ -10,7 +10,6 @@ public class LaporanDAO {
     Connection conn = Koneksi.getConnection();
 
     public boolean kirimLaporanLengkap(int userId, String judul, String kategori, String isi) {
-        // Nama kolom disesuaikan dengan gambar: user_id, judul, kategori, isi
         String sql = "INSERT INTO laporan (user_id, judul, kategori, isi) VALUES (?, ?, ?, ?)";
         try {
             PreparedStatement ps = conn.prepareStatement(sql);

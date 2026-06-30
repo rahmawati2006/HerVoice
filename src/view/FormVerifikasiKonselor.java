@@ -6,7 +6,7 @@ package view;
 
 /**
  *
- * @author nabil
+ * @author mulya
  */
 public class FormVerifikasiKonselor extends javax.swing.JFrame {
     

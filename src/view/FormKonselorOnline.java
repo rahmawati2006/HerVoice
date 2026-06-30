@@ -6,7 +6,7 @@ package view;
 
 /**
  *
- * @author nabil
+ * @author mulya
  */
 public class FormKonselorOnline extends javax.swing.JFrame {
     
@@ -18,6 +18,7 @@ public class FormKonselorOnline extends javax.swing.JFrame {
      */
     public FormKonselorOnline() {
         initComponents();
+        loadPesanTerakhir();
     }
 
     /**
@@ -93,7 +94,7 @@ public class FormKonselorOnline extends javax.swing.JFrame {
         jLabel15 = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
+        btnKirim = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -663,8 +664,8 @@ public class FormKonselorOnline extends javax.swing.JFrame {
 
         jTextField1.setText("Ketik pesan...");
 
-        jButton1.setText("Kirim");
-        jButton1.addActionListener(this::jButton1ActionPerformed);
+        btnKirim.setText("Kirim");
+        btnKirim.addActionListener(this::btnKirimActionPerformed);
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -693,7 +694,7 @@ public class FormKonselorOnline extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 320, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jButton1)
+                .addComponent(btnKirim)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
@@ -715,7 +716,7 @@ public class FormKonselorOnline extends javax.swing.JFrame {
                 .addGap(29, 29, 29)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton1))
+                    .addComponent(btnKirim))
                 .addContainerGap(35, Short.MAX_VALUE))
         );
 
@@ -810,9 +811,34 @@ public class FormKonselorOnline extends javax.swing.JFrame {
     this.dispose();
     }//GEN-LAST:event_btnDashboardActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void btnKirimActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnKirimActionPerformed
+        String pesanBaru = jTextField1.getText().trim();
+        
+        // Validasi agar tidak mengirim teks default atau kosong
+        if (pesanBaru.isEmpty() || pesanBaru.equals("Ketik pesan...")) {
+            return;
+        }
 
-    }//GEN-LAST:event_jButton1ActionPerformed
+        // 2. ID Konselor Sari tiruan (misal ID: 99)
+        int idKonselorSari = 99;
+
+        // 3. Panggil ChatDAO untuk menyimpan ke MySQL Laragon
+        dao.ChatDAO cDao = new dao.ChatDAO();
+    boolean sukses = cDao.kirimPesanBaru(1, 1, pesanBaru); 
+        
+        if (sukses) {
+            javax.swing.JOptionPane.showMessageDialog(this, "Pesan berhasil dikirim ke MySQL!");
+            jLabel13.setText("<html>" + pesanBaru + "</html>");
+            jLabel14.setText("Baru saja");
+            jTextField1.setText("");
+    loadPesanTerakhir();
+            
+            // 5. Kosongkan kembali kolom ketik pesan
+            jTextField1.setText("");
+        } else {
+            javax.swing.JOptionPane.showMessageDialog(this, "Gagal mengirim pesan ke database.");
+        }
+    }//GEN-LAST:event_btnKirimActionPerformed
 
     private void lblMenuDashboardMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblMenuDashboardMouseClicked
     Dashboard dashboard = new Dashboard();
@@ -843,6 +869,43 @@ public class FormKonselorOnline extends javax.swing.JFrame {
     this.dispose();
     }//GEN-LAST:event_lblMenuKonselorOnlineMouseClicked
 
+private void loadPesanTerakhir() {
+        int idSesiChat = 1; // Kita kunci id chat nya di angka 1 untuk testing
+        try {
+            java.sql.Connection conn = config.Koneksi.getConnection();
+            
+            // Query bersih: Hanya butuh 1 buah parameter tanda tanya (?)
+            String sql = "SELECT pengirim_id, pesan, DATE_FORMAT(waktu, '%H:%i') as jam FROM chat_pesan " +
+                         "WHERE chat_id = ? " +
+                         "ORDER BY id DESC LIMIT 2";
+            
+            java.sql.PreparedStatement ps = conn.prepareStatement(sql);
+            
+            // HANYA BOLEH ADA 1 BARIS INI SAJA! Sisa ps.setInt 2, 3, dan 4 sudah dihapus.
+            ps.setInt(1, idSesiChat); 
+            
+            java.sql.ResultSet rs = ps.executeQuery();
+            
+            // Set teks cadangan kalau di database beneran masih kosong melompong
+            jLabel13.setText("Belum ada pesan baru.");
+            jLabel15.setText("Halo, ada yang bisa saya bantu hari ini?");
+            
+            // Petakan pesan secara mundur karena urutan ORDER BY id DESC
+            if (rs.next()) {
+                // Pesan paling baru (Balon Ungu User / jLabel13)
+                jLabel13.setText("<html>" + rs.getString("pesan") + "</html>");
+                jLabel14.setText(rs.getString("jam"));
+                
+                if (rs.next()) {
+                    // Pesan sebelumnya (Balon Abu-abu Konselor / jLabel15)
+                    jLabel15.setText("<html>" + rs.getString("pesan") + "</html>");
+                    jLabel16.setText(rs.getString("jam"));
+                }
+            }
+        } catch (java.sql.SQLException e) {
+            System.out.println("Error load chat: " + e.getMessage());
+        }
+    }
     /**
      * @param args the command line arguments
      */
@@ -870,7 +933,7 @@ public class FormKonselorOnline extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnDashboard;
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton btnKirim;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;

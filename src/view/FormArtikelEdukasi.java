@@ -4,6 +4,7 @@
  */
 package view;
 
+
 /**
  *
  * @author nabil
@@ -17,6 +18,34 @@ public class FormArtikelEdukasi extends javax.swing.JFrame {
      */
     public FormArtikelEdukasi() {
         initComponents();
+        
+        pnlArtikelKDRT.addMouseListener(new java.awt.event.MouseAdapter() {
+            @Override
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                bukaArtikel("KDRT", jLabel1.getText());
+            }
+        });
+
+        pnlArtikelPelecehan.addMouseListener(new java.awt.event.MouseAdapter() {
+            @Override
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                bukaArtikel("Pelecehan Seksual", jLabel3.getText());
+            }
+        });
+
+        pnlArtikelKarir.addMouseListener(new java.awt.event.MouseAdapter() {
+            @Override
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                bukaArtikel("Karir", jLabel5.getText());
+            }
+        });
+
+        pnlArtikelKesehatanMental.addMouseListener(new java.awt.event.MouseAdapter() {
+            @Override
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                bukaArtikel("Kesehatan Mental", jLabel7.getText());
+            }
+        });
     }
 
     /**
@@ -868,6 +897,47 @@ public class FormArtikelEdukasi extends javax.swing.JFrame {
     this.dispose();
     }//GEN-LAST:event_lblMenuKonselorOnlineMouseClicked
 
+    private void bukaArtikel(String kategori, String judulFallback) {
+    try {
+        java.sql.Connection conn = config.Koneksi.getConnection();
+        String sql = "SELECT judul, isi FROM artikel WHERE kategori = ? LIMIT 1";
+        java.sql.PreparedStatement ps = conn.prepareStatement(sql);
+        ps.setString(1, kategori);
+        java.sql.ResultSet rs = ps.executeQuery();
+        
+        String judulTampil = judulFallback;
+        String isiTampil = "Konten edukasi mengenai " + kategori + " belum tersedia di database.";
+        
+        if (rs.next()) {
+            judulTampil = rs.getString("judul");
+            isiTampil = rs.getString("isi");
+        }
+        
+        // --- TRIK MODAL JTEXTAREA DI POP-UP ---
+        // Kita bikin komponen JTextArea langsung lewat kode (tanpa drag-and-drop design)
+        javax.swing.JTextArea textArea = new javax.swing.JTextArea(15, 40); // 15 baris, 40 karakter lebar
+        textArea.setText(isiTampil);
+        textArea.setLineWrap(true);       // Biar teks otomatis turun ke bawah kalau mentok kanan
+        textArea.setWrapStyleWord(true);  // Potongan teks rapi per kata
+        textArea.setEditable(false);      // Biar user ga bisa asal hapus isi artikelnya
+        textArea.setCaretPosition(0);     // Mulai scroll dari paling atas
+        
+        // Bungkus JTextArea ke dalam JScrollPane supaya muncul scrollbar-nya kalau artikel panjang
+        javax.swing.JScrollPane scrollPane = new javax.swing.JScrollPane(textArea);
+        
+        // Munculkan jendela pop-up artikelnya!
+        javax.swing.JOptionPane.showMessageDialog(
+                this, 
+                scrollPane, 
+                judulTampil, 
+                javax.swing.JOptionPane.INFORMATION_MESSAGE
+        );
+        
+    } catch (java.sql.SQLException e) {
+        System.out.println("Error Artikel: " + e.getMessage());
+        e.printStackTrace();
+    }
+}
     
     
     /**

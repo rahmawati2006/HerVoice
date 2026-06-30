@@ -43,22 +43,22 @@ public class ForumDiskusi extends javax.swing.JFrame {
         jLabel63 = new javax.swing.JLabel();
         jLabel64 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        btnKembali = new javax.swing.JButton();
+        btnRefresh = new javax.swing.JButton();
+        btnBagikan = new javax.swing.JButton();
         jPanel4 = new javax.swing.JPanel();
         jPanel29 = new javax.swing.JPanel();
         jLabel65 = new javax.swing.JLabel();
         jPanel30 = new javax.swing.JPanel();
-        jLabel67 = new javax.swing.JLabel();
+        jDashboard = new javax.swing.JLabel();
         jPanel31 = new javax.swing.JPanel();
-        jLabel68 = new javax.swing.JLabel();
+        jForumDiskusi = new javax.swing.JLabel();
         jPanel32 = new javax.swing.JPanel();
-        jLabel69 = new javax.swing.JLabel();
+        jLaporanKasus = new javax.swing.JLabel();
         jPanel35 = new javax.swing.JPanel();
-        jLabel72 = new javax.swing.JLabel();
+        jArtikelEdukasi = new javax.swing.JLabel();
         jPanel36 = new javax.swing.JPanel();
-        jLabel73 = new javax.swing.JLabel();
+        jKonselorOnline = new javax.swing.JLabel();
         jPanel5 = new javax.swing.JPanel();
         jLabel74 = new javax.swing.JLabel();
         jLabel75 = new javax.swing.JLabel();
@@ -75,8 +75,8 @@ public class ForumDiskusi extends javax.swing.JFrame {
         jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jButton4 = new javax.swing.JButton();
+        jTulisKomentar = new javax.swing.JTextField();
+        btnKirim = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
 
@@ -204,17 +204,17 @@ public class ForumDiskusi extends javax.swing.JFrame {
                     .addContainerGap()))
         );
 
-        jButton1.setText("Kembali");
-        jButton1.setPreferredSize(new java.awt.Dimension(72, 20));
-        jButton1.addActionListener(this::jButton1ActionPerformed);
+        btnKembali.setText("Kembali");
+        btnKembali.setPreferredSize(new java.awt.Dimension(72, 20));
+        btnKembali.addActionListener(this::btnKembaliActionPerformed);
 
-        jButton2.setText("Refresh");
-        jButton2.setPreferredSize(new java.awt.Dimension(72, 20));
-        jButton2.addActionListener(this::jButton2ActionPerformed);
+        btnRefresh.setText("Refresh");
+        btnRefresh.setPreferredSize(new java.awt.Dimension(72, 20));
+        btnRefresh.addActionListener(this::btnRefreshActionPerformed);
 
-        jButton3.setText("Bagikan");
-        jButton3.setPreferredSize(new java.awt.Dimension(72, 20));
-        jButton3.addActionListener(this::jButton3ActionPerformed);
+        btnBagikan.setText("Bagikan");
+        btnBagikan.setPreferredSize(new java.awt.Dimension(72, 20));
+        btnBagikan.addActionListener(this::btnBagikanActionPerformed);
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -222,11 +222,11 @@ public class ForumDiskusi extends javax.swing.JFrame {
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGap(14, 14, 14)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnKembali, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnRefresh, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnBagikan, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
@@ -234,9 +234,9 @@ public class ForumDiskusi extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(btnKembali, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnRefresh, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnBagikan, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
         );
 
         jPanel4.setBackground(new java.awt.Color(255, 255, 255));
@@ -251,10 +251,10 @@ public class ForumDiskusi extends javax.swing.JFrame {
         jPanel30.setBackground(new java.awt.Color(255, 255, 255));
         jPanel30.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
-        jLabel67.setText("Dashboard");
-        jLabel67.addMouseListener(new java.awt.event.MouseAdapter() {
+        jDashboard.setText("Dashboard");
+        jDashboard.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel67MouseClicked(evt);
+                jDashboardMouseClicked(evt);
             }
         });
 
@@ -264,14 +264,14 @@ public class ForumDiskusi extends javax.swing.JFrame {
             jPanel30Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel30Layout.createSequentialGroup()
                 .addGap(40, 40, 40)
-                .addComponent(jLabel67)
+                .addComponent(jDashboard)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel30Layout.setVerticalGroup(
             jPanel30Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel30Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel67)
+                .addComponent(jDashboard)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -283,9 +283,9 @@ public class ForumDiskusi extends javax.swing.JFrame {
             }
         });
 
-        jLabel68.setBackground(new java.awt.Color(245, 224, 229));
-        jLabel68.setForeground(new java.awt.Color(44, 26, 34));
-        jLabel68.setText("Forum Diskusi");
+        jForumDiskusi.setBackground(new java.awt.Color(245, 224, 229));
+        jForumDiskusi.setForeground(new java.awt.Color(44, 26, 34));
+        jForumDiskusi.setText("Forum Diskusi");
 
         javax.swing.GroupLayout jPanel31Layout = new javax.swing.GroupLayout(jPanel31);
         jPanel31.setLayout(jPanel31Layout);
@@ -293,25 +293,25 @@ public class ForumDiskusi extends javax.swing.JFrame {
             jPanel31Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel31Layout.createSequentialGroup()
                 .addGap(40, 40, 40)
-                .addComponent(jLabel68)
+                .addComponent(jForumDiskusi)
                 .addContainerGap(80, Short.MAX_VALUE))
         );
         jPanel31Layout.setVerticalGroup(
             jPanel31Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel31Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel68)
+                .addComponent(jForumDiskusi)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jPanel32.setBackground(new java.awt.Color(255, 255, 255));
         jPanel32.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
-        jLabel69.setForeground(new java.awt.Color(44, 26, 34));
-        jLabel69.setText("Laporan Kasus");
-        jLabel69.addMouseListener(new java.awt.event.MouseAdapter() {
+        jLaporanKasus.setForeground(new java.awt.Color(44, 26, 34));
+        jLaporanKasus.setText("Laporan Kasus");
+        jLaporanKasus.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel69MouseClicked(evt);
+                jLaporanKasusMouseClicked(evt);
             }
         });
 
@@ -321,25 +321,25 @@ public class ForumDiskusi extends javax.swing.JFrame {
             jPanel32Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel32Layout.createSequentialGroup()
                 .addGap(40, 40, 40)
-                .addComponent(jLabel69)
+                .addComponent(jLaporanKasus)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel32Layout.setVerticalGroup(
             jPanel32Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel32Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel69)
+                .addComponent(jLaporanKasus)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jPanel35.setBackground(new java.awt.Color(255, 255, 255));
         jPanel35.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
-        jLabel72.setForeground(new java.awt.Color(44, 26, 34));
-        jLabel72.setText("Artikel Edukasi");
-        jLabel72.addMouseListener(new java.awt.event.MouseAdapter() {
+        jArtikelEdukasi.setForeground(new java.awt.Color(44, 26, 34));
+        jArtikelEdukasi.setText("Artikel Edukasi");
+        jArtikelEdukasi.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel72MouseClicked(evt);
+                jArtikelEdukasiMouseClicked(evt);
             }
         });
 
@@ -349,25 +349,25 @@ public class ForumDiskusi extends javax.swing.JFrame {
             jPanel35Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel35Layout.createSequentialGroup()
                 .addGap(40, 40, 40)
-                .addComponent(jLabel72)
+                .addComponent(jArtikelEdukasi)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel35Layout.setVerticalGroup(
             jPanel35Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel35Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel72)
+                .addComponent(jArtikelEdukasi)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jPanel36.setBackground(new java.awt.Color(255, 255, 255));
         jPanel36.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
-        jLabel73.setForeground(new java.awt.Color(44, 26, 34));
-        jLabel73.setText("Konselor Online");
-        jLabel73.addMouseListener(new java.awt.event.MouseAdapter() {
+        jKonselorOnline.setForeground(new java.awt.Color(44, 26, 34));
+        jKonselorOnline.setText("Konselor Online");
+        jKonselorOnline.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel73MouseClicked(evt);
+                jKonselorOnlineMouseClicked(evt);
             }
         });
 
@@ -377,14 +377,14 @@ public class ForumDiskusi extends javax.swing.JFrame {
             jPanel36Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel36Layout.createSequentialGroup()
                 .addGap(40, 40, 40)
-                .addComponent(jLabel73)
+                .addComponent(jKonselorOnline)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel36Layout.setVerticalGroup(
             jPanel36Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel36Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel73)
+                .addComponent(jKonselorOnline)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -523,11 +523,11 @@ public class ForumDiskusi extends javax.swing.JFrame {
 
         jLabel12.setText("Aku pernah di posisimu. Semangat ya, kamu tidak sendiri.");
 
-        jTextField1.setText("Tulis komentar...");
-        jTextField1.addActionListener(this::jTextField1ActionPerformed);
+        jTulisKomentar.setText("Tulis komentar...");
+        jTulisKomentar.addActionListener(this::jTulisKomentarActionPerformed);
 
-        jButton4.setText("Kirim");
-        jButton4.addActionListener(this::jButton4ActionPerformed);
+        btnKirim.setText("Kirim");
+        btnKirim.addActionListener(this::btnKirimActionPerformed);
 
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
@@ -536,9 +536,9 @@ public class ForumDiskusi extends javax.swing.JFrame {
             .addGroup(jPanel6Layout.createSequentialGroup()
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel6Layout.createSequentialGroup()
-                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 373, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jTulisKomentar, javax.swing.GroupLayout.PREFERRED_SIZE, 373, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton4))
+                        .addComponent(btnKirim))
                     .addGroup(jPanel6Layout.createSequentialGroup()
                         .addGap(24, 24, 24)
                         .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -570,8 +570,8 @@ public class ForumDiskusi extends javax.swing.JFrame {
                 .addComponent(jLabel12)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, 21, Short.MAX_VALUE)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton4)))
+                    .addComponent(jTulisKomentar, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnKirim)))
         );
 
         jLabel6.setText("8 Komentar");
@@ -624,51 +624,51 @@ public class ForumDiskusi extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void btnKembaliActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnKembaliActionPerformed
     Dashboard dashboard = new Dashboard();
     dashboard.setVisible(true);
     this.dispose();
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_btnKembaliActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void btnRefreshActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRefreshActionPerformed
     this.dispose();
     new ForumDiskusi().setVisible(true);
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_btnRefreshActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void btnBagikanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBagikanActionPerformed
     javax.swing.JOptionPane.showMessageDialog(
             this,
             "Link forum berhasil disalin.");
-    }//GEN-LAST:event_jButton3ActionPerformed
+    }//GEN-LAST:event_btnBagikanActionPerformed
 
-    private void jLabel67MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel67MouseClicked
+    private void jDashboardMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jDashboardMouseClicked
     Dashboard dashboard = new Dashboard();
     dashboard.setVisible(true);
     this.dispose();
-    }//GEN-LAST:event_jLabel67MouseClicked
+    }//GEN-LAST:event_jDashboardMouseClicked
 
     private void jPanel31MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel31MouseClicked
     new ForumDiskusi().setVisible(true);
     this.dispose();
     }//GEN-LAST:event_jPanel31MouseClicked
 
-    private void jLabel69MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel69MouseClicked
+    private void jLaporanKasusMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLaporanKasusMouseClicked
     new FormLaporan().setVisible(true);
     this.dispose();
-    }//GEN-LAST:event_jLabel69MouseClicked
+    }//GEN-LAST:event_jLaporanKasusMouseClicked
 
-    private void jLabel72MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel72MouseClicked
+    private void jArtikelEdukasiMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jArtikelEdukasiMouseClicked
     new FormArtikelEdukasi().setVisible(true);
     this.dispose();
-    }//GEN-LAST:event_jLabel72MouseClicked
+    }//GEN-LAST:event_jArtikelEdukasiMouseClicked
 
-    private void jLabel73MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel73MouseClicked
+    private void jKonselorOnlineMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jKonselorOnlineMouseClicked
     new FormKonselorOnline().setVisible(true);
     this.dispose();
-    }//GEN-LAST:event_jLabel73MouseClicked
+    }//GEN-LAST:event_jKonselorOnlineMouseClicked
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
- String komentar = jTextField1.getText().trim();
+    private void btnKirimActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnKirimActionPerformed
+ String komentar = jTulisKomentar.getText().trim();
 
         // 1. Validasi input komentar kosong
         if (komentar.isEmpty() || komentar.equals("Tulis komentar...")) {
@@ -681,30 +681,26 @@ public class ForumDiskusi extends javax.swing.JFrame {
         // 2. Kirim komentar ke database via ForumDAO
         ForumDAO fDao = new ForumDAO();
         
-        // Menggunakan session.Session.id yang sudah kamu set saat login
-        // Serta melemparkan teks komentar dari jTextField1
         boolean sukses = fDao.tambahPostingan(session.Session.id, komentar);
 
         if (sukses) {
             javax.swing.JOptionPane.showMessageDialog(
                     this,
                     "Komentar berhasil dikirim!");
-            jTextField1.setText(""); // Reset text field setelah sukses
+            jTulisKomentar.setText(""); // Reset text field setelah sukses
             
-            // NOTE: Jika ke depannya kamu membuat area list komentar dinamis,
-            // kamu bisa memanggil method refresh list di sini.
         } else {
             javax.swing.JOptionPane.showMessageDialog(
                     this,
                     "Gagal mengirim komentar ke database.");
         }
-    }//GEN-LAST:event_jButton4ActionPerformed
+    }//GEN-LAST:event_btnKirimActionPerformed
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
-    if (jTextField1.getText().equals("Tulis komentar...")) {
-        jTextField1.setText("");
+    private void jTulisKomentarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTulisKomentarActionPerformed
+    if (jTulisKomentar.getText().equals("Tulis komentar...")) {
+        jTulisKomentar.setText("");
     }
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_jTulisKomentarActionPerformed
     
     /**
      * @param args the command line arguments
@@ -732,12 +728,16 @@ public class ForumDiskusi extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
+    private javax.swing.JButton btnBagikan;
+    private javax.swing.JButton btnKembali;
+    private javax.swing.JButton btnKirim;
+    private javax.swing.JButton btnRefresh;
+    private javax.swing.JLabel jArtikelEdukasi;
+    private javax.swing.JLabel jDashboard;
     private javax.swing.JLabel jDashboardHeader;
+    private javax.swing.JLabel jForumDiskusi;
     private javax.swing.JLabel jHerVoiceHeader;
+    private javax.swing.JLabel jKonselorOnline;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -755,16 +755,12 @@ public class ForumDiskusi extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel63;
     private javax.swing.JLabel jLabel64;
     private javax.swing.JLabel jLabel65;
-    private javax.swing.JLabel jLabel67;
-    private javax.swing.JLabel jLabel68;
-    private javax.swing.JLabel jLabel69;
     private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel72;
-    private javax.swing.JLabel jLabel73;
     private javax.swing.JLabel jLabel74;
     private javax.swing.JLabel jLabel75;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JLabel jLaporanKasus;
     private javax.swing.JPanel jPanel28;
     private javax.swing.JPanel jPanel29;
     private javax.swing.JPanel jPanel3;
@@ -777,7 +773,7 @@ public class ForumDiskusi extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel7;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField jTulisKomentar;
     private javax.swing.JPanel pnlContent;
     private javax.swing.JPanel pnlHeader;
     private javax.swing.JPanel pnlMain;

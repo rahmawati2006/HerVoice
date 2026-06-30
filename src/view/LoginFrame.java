@@ -6,6 +6,7 @@ package view;
 
 import javax.swing.JOptionPane;
 import dao.UserDAO;
+import session.Session;
 /**
  *
  * @author nabil
@@ -331,7 +332,7 @@ public LoginFrame() {
 
     private void lblRegisterLinkMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblRegisterLinkMouseClicked
   RegisterFrame register = new RegisterFrame();
-    register.setLocationRelativeTo(null); // biar muncul di tengah
+    register.setLocationRelativeTo(null);
     register.setVisible(true);
     }//GEN-LAST:event_lblRegisterLinkMouseClicked
 
@@ -353,19 +354,21 @@ public LoginFrame() {
 
     if (dao.login(email, password)) {
 
-        JOptionPane.showMessageDialog(this, "Login berhasil!");
+    JOptionPane.showMessageDialog(this, "Login berhasil!");
 
-        Dashboard dashboard = new Dashboard();
-        dashboard.setLocationRelativeTo(null);
-        dashboard.setVisible(true);
-
-        dispose();
-
+    if (Session.role.equalsIgnoreCase("admin")) {
+        new PanelAdmin().setVisible(true);
     } else {
-
-        JOptionPane.showMessageDialog(this, "Email atau password salah!");
-
+        new Dashboard().setVisible(true);
     }
+
+    dispose();
+
+} else {
+
+    JOptionPane.showMessageDialog(this, "Email atau password salah!");
+
+}
     }//GEN-LAST:event_btnLoginActionPerformed
 
     /**

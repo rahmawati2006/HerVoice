@@ -3,6 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package view;
+import session.Session;
 
 /**
  *
@@ -301,9 +302,11 @@ public class PanelAdmin extends javax.swing.JFrame {
 
         btnRefresh.setText("Refresh");
         btnRefresh.setPreferredSize(new java.awt.Dimension(72, 20));
+        btnRefresh.addActionListener(this::btnRefreshActionPerformed);
 
         btnExport.setText("Export");
         btnExport.setPreferredSize(new java.awt.Dimension(72, 20));
+        btnExport.addActionListener(this::btnExportActionPerformed);
 
         javax.swing.GroupLayout pnlActionBarLayout = new javax.swing.GroupLayout(pnlActionBar);
         pnlActionBar.setLayout(pnlActionBarLayout);
@@ -338,6 +341,11 @@ public class PanelAdmin extends javax.swing.JFrame {
         pnlDashboard.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         lblDashboard.setText("Dashboard");
+        lblDashboard.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblDashboardMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout pnlDashboardLayout = new javax.swing.GroupLayout(pnlDashboard);
         pnlDashboard.setLayout(pnlDashboardLayout);
@@ -358,6 +366,11 @@ public class PanelAdmin extends javax.swing.JFrame {
 
         pnlKelolaPengguna.setBackground(new java.awt.Color(255, 255, 255));
         pnlKelolaPengguna.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        pnlKelolaPengguna.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                pnlKelolaPenggunaMouseClicked(evt);
+            }
+        });
 
         lblKelolaPengguna.setForeground(new java.awt.Color(44, 26, 34));
         lblKelolaPengguna.setText("Kelola Pengguna");
@@ -384,6 +397,11 @@ public class PanelAdmin extends javax.swing.JFrame {
 
         lblLaporanMasuk.setForeground(new java.awt.Color(44, 26, 34));
         lblLaporanMasuk.setText("Laporan Masuk");
+        lblLaporanMasuk.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblLaporanMasukMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout pnlLaporanMasukLayout = new javax.swing.GroupLayout(pnlLaporanMasuk);
         pnlLaporanMasuk.setLayout(pnlLaporanMasukLayout);
@@ -407,6 +425,11 @@ public class PanelAdmin extends javax.swing.JFrame {
 
         lblModerasiForum.setForeground(new java.awt.Color(44, 26, 34));
         lblModerasiForum.setText("Moderasi Forum");
+        lblModerasiForum.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblModerasiForumMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout pnlModerasiForumLayout = new javax.swing.GroupLayout(pnlModerasiForum);
         pnlModerasiForum.setLayout(pnlModerasiForumLayout);
@@ -430,6 +453,11 @@ public class PanelAdmin extends javax.swing.JFrame {
 
         lblVerifikasiKonselor.setForeground(new java.awt.Color(44, 26, 34));
         lblVerifikasiKonselor.setText("Verifikasi Konselor");
+        lblVerifikasiKonselor.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblVerifikasiKonselorMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout pnlVerifikasiKonselorLayout = new javax.swing.GroupLayout(pnlVerifikasiKonselor);
         pnlVerifikasiKonselor.setLayout(pnlVerifikasiKonselorLayout);
@@ -453,6 +481,11 @@ public class PanelAdmin extends javax.swing.JFrame {
 
         lblKelolaArtikel.setForeground(new java.awt.Color(44, 26, 34));
         lblKelolaArtikel.setText("Kelola Artikel");
+        lblKelolaArtikel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblKelolaArtikelMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout pnlKelolaArtikelLayout = new javax.swing.GroupLayout(pnlKelolaArtikel);
         pnlKelolaArtikel.setLayout(pnlKelolaArtikelLayout);
@@ -476,6 +509,11 @@ public class PanelAdmin extends javax.swing.JFrame {
 
         lblPengaturan.setForeground(new java.awt.Color(44, 26, 34));
         lblPengaturan.setText("Pengaturan");
+        lblPengaturan.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblPengaturanMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout pnlPengaturanLayout = new javax.swing.GroupLayout(pnlPengaturan);
         pnlPengaturan.setLayout(pnlPengaturanLayout);
@@ -1191,6 +1229,49 @@ public class PanelAdmin extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnRefreshActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRefreshActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnRefreshActionPerformed
+
+    private void btnExportActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExportActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnExportActionPerformed
+
+    private void lblDashboardMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblDashboardMouseClicked
+    new PanelAdmin().setVisible(true);
+    dispose();
+    }//GEN-LAST:event_lblDashboardMouseClicked
+
+    private void pnlKelolaPenggunaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnlKelolaPenggunaMouseClicked
+    new FormKelolaPengguna().setVisible(true);
+    dispose();
+    }//GEN-LAST:event_pnlKelolaPenggunaMouseClicked
+
+    private void lblLaporanMasukMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblLaporanMasukMouseClicked
+    new FormLaporanMasuk().setVisible(true);
+    dispose();
+    }//GEN-LAST:event_lblLaporanMasukMouseClicked
+
+    private void lblModerasiForumMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblModerasiForumMouseClicked
+    new FormModerasiForum().setVisible(true);
+    dispose();
+    }//GEN-LAST:event_lblModerasiForumMouseClicked
+
+    private void lblVerifikasiKonselorMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblVerifikasiKonselorMouseClicked
+    new FormVerifikasiKonselor().setVisible(true);
+    dispose();
+    }//GEN-LAST:event_lblVerifikasiKonselorMouseClicked
+
+    private void lblKelolaArtikelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblKelolaArtikelMouseClicked
+    new FormKelolaArtikel().setVisible(true);
+    dispose();
+    }//GEN-LAST:event_lblKelolaArtikelMouseClicked
+
+    private void lblPengaturanMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblPengaturanMouseClicked
+    new FormPengaturan().setVisible(true);
+    dispose();
+    }//GEN-LAST:event_lblPengaturanMouseClicked
 
     /**
      * @param args the command line arguments

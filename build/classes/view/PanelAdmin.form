@@ -369,6 +369,9 @@
               <Dimension value="[72, 20]"/>
             </Property>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnRefreshActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="btnExport">
           <Properties>
@@ -377,6 +380,9 @@
               <Dimension value="[72, 20]"/>
             </Property>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnExportActionPerformed"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>
@@ -513,6 +519,9 @@
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Dashboard"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lblDashboardMouseClicked"/>
+                  </Events>
                 </Component>
               </SubComponents>
             </Container>
@@ -527,6 +536,9 @@
                   </Border>
                 </Property>
               </Properties>
+              <Events>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="pnlKelolaPenggunaMouseClicked"/>
+              </Events>
 
               <Layout>
                 <DimensionLayout dim="0">
@@ -599,6 +611,9 @@
                     </Property>
                     <Property name="text" type="java.lang.String" value="Laporan Masuk"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lblLaporanMasukMouseClicked"/>
+                  </Events>
                 </Component>
               </SubComponents>
             </Container>
@@ -642,6 +657,9 @@
                     </Property>
                     <Property name="text" type="java.lang.String" value="Moderasi Forum"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lblModerasiForumMouseClicked"/>
+                  </Events>
                 </Component>
               </SubComponents>
             </Container>
@@ -685,6 +703,9 @@
                     </Property>
                     <Property name="text" type="java.lang.String" value="Verifikasi Konselor"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lblVerifikasiKonselorMouseClicked"/>
+                  </Events>
                 </Component>
               </SubComponents>
             </Container>
@@ -728,6 +749,9 @@
                     </Property>
                     <Property name="text" type="java.lang.String" value="Kelola Artikel"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lblKelolaArtikelMouseClicked"/>
+                  </Events>
                 </Component>
               </SubComponents>
             </Container>
@@ -771,6 +795,9 @@
                     </Property>
                     <Property name="text" type="java.lang.String" value="Pengaturan"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lblPengaturanMouseClicked"/>
+                  </Events>
                 </Component>
               </SubComponents>
             </Container>

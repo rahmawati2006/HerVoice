@@ -3,6 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package view;
+
 import javax.swing.JOptionPane;
 
 /**
@@ -10,9 +11,8 @@ import javax.swing.JOptionPane;
  * @author mulya
  */
 public class FormLaporan extends javax.swing.JFrame {
-    
+
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(FormLaporan.class.getName());
-    
 
     /**
      * Creates new form FormLaporan
@@ -37,22 +37,22 @@ public class FormLaporan extends javax.swing.JFrame {
         jDashboardHeader = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jPanel23 = new javax.swing.JPanel();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
-        jButton6 = new javax.swing.JButton();
+        btnBeranda = new javax.swing.JButton();
+        btnBuatPostingan = new javax.swing.JButton();
+        btnBuatLaporan = new javax.swing.JButton();
+        btnArtikel = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         jLabel77 = new javax.swing.JLabel();
         jPanel25 = new javax.swing.JPanel();
-        jLabel79 = new javax.swing.JLabel();
+        jLaporanKasus = new javax.swing.JLabel();
         jPanel27 = new javax.swing.JPanel();
-        jLabel81 = new javax.swing.JLabel();
+        jArtikelEdukasi = new javax.swing.JLabel();
         jPanel20 = new javax.swing.JPanel();
-        jLabel82 = new javax.swing.JLabel();
+        jKonselorOnline = new javax.swing.JLabel();
         jPanel30 = new javax.swing.JPanel();
-        jLabel86 = new javax.swing.JLabel();
+        jForumDiskusi = new javax.swing.JLabel();
         jPanel31 = new javax.swing.JPanel();
-        jLabel87 = new javax.swing.JLabel();
+        jBeranda2 = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
         jLabel72 = new javax.swing.JLabel();
         jLabel73 = new javax.swing.JLabel();
@@ -63,22 +63,23 @@ public class FormLaporan extends javax.swing.JFrame {
         jLabel70 = new javax.swing.JLabel();
         jLabel71 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        jJenisKekerasan = new javax.swing.JComboBox<>();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        jLokasiKejadian = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
-        jRadioButton1 = new javax.swing.JRadioButton();
-        jRadioButton2 = new javax.swing.JRadioButton();
+        jCeklisSudah = new javax.swing.JRadioButton();
+        jCeklisBelum = new javax.swing.JRadioButton();
         jLabel6 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
         jLabel76 = new javax.swing.JLabel();
-        jComboBox2 = new javax.swing.JComboBox<>();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jComboBox3 = new javax.swing.JComboBox<>();
-        jComboBox4 = new javax.swing.JComboBox<>();
-        jComboBox5 = new javax.swing.JComboBox<>();
+        jHubungan = new javax.swing.JComboBox<>();
+        btnBatal = new javax.swing.JButton();
+        btnKirimLaporan = new javax.swing.JButton();
+        jTanggalKejadian = new javax.swing.JComboBox<>();
+        jBulanKejadian = new javax.swing.JComboBox<>();
+        jTahunKejadian = new javax.swing.JComboBox<>();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jDeskripsi = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -134,21 +135,21 @@ public class FormLaporan extends javax.swing.JFrame {
                     .addContainerGap(7, Short.MAX_VALUE)))
         );
 
-        jButton3.setForeground(new java.awt.Color(44, 26, 34));
-        jButton3.setText("Beranda");
-        jButton3.addActionListener(this::jButton3ActionPerformed);
+        btnBeranda.setForeground(new java.awt.Color(44, 26, 34));
+        btnBeranda.setText("Beranda");
+        btnBeranda.addActionListener(this::btnBerandaActionPerformed);
 
-        jButton4.setForeground(new java.awt.Color(44, 26, 34));
-        jButton4.setText("Buat Postingan");
-        jButton4.addActionListener(this::jButton4ActionPerformed);
+        btnBuatPostingan.setForeground(new java.awt.Color(44, 26, 34));
+        btnBuatPostingan.setText("Buat Postingan");
+        btnBuatPostingan.addActionListener(this::btnBuatPostinganActionPerformed);
 
-        jButton5.setForeground(new java.awt.Color(44, 26, 34));
-        jButton5.setText("Buat Laporan");
-        jButton5.addActionListener(this::jButton5ActionPerformed);
+        btnBuatLaporan.setForeground(new java.awt.Color(44, 26, 34));
+        btnBuatLaporan.setText("Buat Laporan");
+        btnBuatLaporan.addActionListener(this::btnBuatLaporanActionPerformed);
 
-        jButton6.setForeground(new java.awt.Color(44, 26, 34));
-        jButton6.setText("Artikel");
-        jButton6.addActionListener(this::jButton6ActionPerformed);
+        btnArtikel.setForeground(new java.awt.Color(44, 26, 34));
+        btnArtikel.setText("Artikel");
+        btnArtikel.addActionListener(this::btnArtikelActionPerformed);
 
         javax.swing.GroupLayout jPanel23Layout = new javax.swing.GroupLayout(jPanel23);
         jPanel23.setLayout(jPanel23Layout);
@@ -156,13 +157,13 @@ public class FormLaporan extends javax.swing.JFrame {
             jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel23Layout.createSequentialGroup()
                 .addGap(27, 27, 27)
-                .addComponent(jButton3)
+                .addComponent(btnBeranda)
                 .addGap(45, 45, 45)
-                .addComponent(jButton4)
+                .addComponent(btnBuatPostingan)
                 .addGap(52, 52, 52)
-                .addComponent(jButton5)
+                .addComponent(btnBuatLaporan)
                 .addGap(45, 45, 45)
-                .addComponent(jButton6)
+                .addComponent(btnArtikel)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel23Layout.setVerticalGroup(
@@ -170,10 +171,10 @@ public class FormLaporan extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel23Layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addGroup(jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton3)
-                    .addComponent(jButton4)
-                    .addComponent(jButton5)
-                    .addComponent(jButton6))
+                    .addComponent(btnBeranda)
+                    .addComponent(btnBuatPostingan)
+                    .addComponent(btnBuatLaporan)
+                    .addComponent(btnArtikel))
                 .addGap(0, 0, 0))
         );
 
@@ -207,8 +208,8 @@ public class FormLaporan extends javax.swing.JFrame {
         jPanel25.setBackground(new java.awt.Color(245, 224, 229));
         jPanel25.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
-        jLabel79.setForeground(new java.awt.Color(44, 26, 34));
-        jLabel79.setText("Laporan Kasus");
+        jLaporanKasus.setForeground(new java.awt.Color(44, 26, 34));
+        jLaporanKasus.setText("Laporan Kasus");
 
         javax.swing.GroupLayout jPanel25Layout = new javax.swing.GroupLayout(jPanel25);
         jPanel25.setLayout(jPanel25Layout);
@@ -216,22 +217,22 @@ public class FormLaporan extends javax.swing.JFrame {
             jPanel25Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel25Layout.createSequentialGroup()
                 .addGap(40, 40, 40)
-                .addComponent(jLabel79)
+                .addComponent(jLaporanKasus)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel25Layout.setVerticalGroup(
             jPanel25Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel25Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel79)
+                .addComponent(jLaporanKasus)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jPanel27.setBackground(new java.awt.Color(255, 255, 255));
         jPanel27.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
-        jLabel81.setForeground(new java.awt.Color(44, 26, 34));
-        jLabel81.setText("Artikel  Edukasi");
+        jArtikelEdukasi.setForeground(new java.awt.Color(44, 26, 34));
+        jArtikelEdukasi.setText("Artikel  Edukasi");
 
         javax.swing.GroupLayout jPanel27Layout = new javax.swing.GroupLayout(jPanel27);
         jPanel27.setLayout(jPanel27Layout);
@@ -239,22 +240,22 @@ public class FormLaporan extends javax.swing.JFrame {
             jPanel27Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel27Layout.createSequentialGroup()
                 .addGap(40, 40, 40)
-                .addComponent(jLabel81)
+                .addComponent(jArtikelEdukasi)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel27Layout.setVerticalGroup(
             jPanel27Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel27Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel81)
+                .addComponent(jArtikelEdukasi)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jPanel20.setBackground(new java.awt.Color(255, 255, 255));
         jPanel20.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
-        jLabel82.setForeground(new java.awt.Color(44, 26, 34));
-        jLabel82.setText("Konselor Online");
+        jKonselorOnline.setForeground(new java.awt.Color(44, 26, 34));
+        jKonselorOnline.setText("Konselor Online");
 
         javax.swing.GroupLayout jPanel20Layout = new javax.swing.GroupLayout(jPanel20);
         jPanel20.setLayout(jPanel20Layout);
@@ -262,22 +263,22 @@ public class FormLaporan extends javax.swing.JFrame {
             jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel20Layout.createSequentialGroup()
                 .addGap(40, 40, 40)
-                .addComponent(jLabel82)
+                .addComponent(jKonselorOnline)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel20Layout.setVerticalGroup(
             jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel20Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel82)
+                .addComponent(jKonselorOnline)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jPanel30.setBackground(new java.awt.Color(255, 255, 255));
         jPanel30.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
-        jLabel86.setForeground(new java.awt.Color(44, 26, 34));
-        jLabel86.setText("Forum Diskusi");
+        jForumDiskusi.setForeground(new java.awt.Color(44, 26, 34));
+        jForumDiskusi.setText("Forum Diskusi");
 
         javax.swing.GroupLayout jPanel30Layout = new javax.swing.GroupLayout(jPanel30);
         jPanel30.setLayout(jPanel30Layout);
@@ -285,21 +286,21 @@ public class FormLaporan extends javax.swing.JFrame {
             jPanel30Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel30Layout.createSequentialGroup()
                 .addGap(40, 40, 40)
-                .addComponent(jLabel86)
+                .addComponent(jForumDiskusi)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel30Layout.setVerticalGroup(
             jPanel30Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel30Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel86)
+                .addComponent(jForumDiskusi)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jPanel31.setBackground(new java.awt.Color(255, 255, 255));
         jPanel31.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
-        jLabel87.setText("Beranda");
+        jBeranda2.setText("Beranda");
 
         javax.swing.GroupLayout jPanel31Layout = new javax.swing.GroupLayout(jPanel31);
         jPanel31.setLayout(jPanel31Layout);
@@ -307,14 +308,14 @@ public class FormLaporan extends javax.swing.JFrame {
             jPanel31Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel31Layout.createSequentialGroup()
                 .addGap(40, 40, 40)
-                .addComponent(jLabel87)
+                .addComponent(jBeranda2)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel31Layout.setVerticalGroup(
             jPanel31Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel31Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel87)
+                .addComponent(jBeranda2)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -418,54 +419,57 @@ public class FormLaporan extends javax.swing.JFrame {
         jLabel2.setForeground(new java.awt.Color(44, 26, 34));
         jLabel2.setText("Jenis Kekerasan");
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "KDRT", "Karir", "Pelecehan Seksual", "Kesehatan Mental", "Stalking", "Lainnya" }));
+        jJenisKekerasan.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "KDRT", "Karir", "Pelecehan Seksual", "Kesehatan Mental", "Stalking", "Lainnya" }));
 
         jLabel3.setForeground(new java.awt.Color(44, 26, 34));
         jLabel3.setText("Tanggal Kejadian");
 
         jLabel4.setText("Lokasi Kejadian");
 
-        jTextField1.setText("Kota / Daerah Kejadian");
-        jTextField1.addActionListener(this::jTextField1ActionPerformed);
+        jLokasiKejadian.setText("Kota / Daerah Kejadian");
+        jLokasiKejadian.addActionListener(this::jLokasiKejadianActionPerformed);
 
         jLabel5.setText("Sudah lapor ke pihak berwajib?");
 
-        bgStatusLaporan.add(jRadioButton1);
-        jRadioButton1.setText("Sudah");
+        bgStatusLaporan.add(jCeklisSudah);
+        jCeklisSudah.setText("Sudah");
 
-        bgStatusLaporan.add(jRadioButton2);
-        jRadioButton2.setText("Belum");
-        jRadioButton2.addActionListener(this::jRadioButton2ActionPerformed);
+        bgStatusLaporan.add(jCeklisBelum);
+        jCeklisBelum.setText("Belum");
+        jCeklisBelum.addActionListener(this::jCeklisBelumActionPerformed);
 
         jLabel6.setForeground(new java.awt.Color(44, 26, 34));
         jLabel6.setText("Deskripsi Kejadian");
 
-        jTextField2.setText("Ceritakan apa yang terjadi secara singkat");
-
         jLabel76.setText("Hubungan dengan Pelaku");
 
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Pasangan", "Mantan Pasangan", "Keluarga", "Teman", "Rekan Kerja", "Atasan", "Guru / Dosen", "Orang Tidak Dikenal", "Lainnya" }));
+        jHubungan.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Pasangan", "Mantan Pasangan", "Keluarga", "Teman", "Rekan Kerja", "Atasan", "Guru / Dosen", "Orang Tidak Dikenal", "Lainnya" }));
 
-        jButton1.setText("Batal");
-        jButton1.addActionListener(this::jButton1ActionPerformed);
+        btnBatal.setText("Batal");
+        btnBatal.addActionListener(this::btnBatalActionPerformed);
 
-        jButton2.setText("Kirim Laporan");
-        jButton2.addActionListener(this::jButton2ActionPerformed);
+        btnKirimLaporan.setText("Kirim Laporan");
+        btnKirimLaporan.addActionListener(this::btnKirimLaporanActionPerformed);
 
-        jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Tanggal", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31" }));
-        jComboBox3.setToolTipText("Tgl");
-        jComboBox3.addActionListener(this::jComboBox3ActionPerformed);
+        jTanggalKejadian.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Tanggal", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31" }));
+        jTanggalKejadian.setToolTipText("Tgl");
+        jTanggalKejadian.addActionListener(this::jTanggalKejadianActionPerformed);
 
-        jComboBox4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Bulan", "Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus", "September", "Oktober", "November", "Desember" }));
+        jBulanKejadian.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Bulan", "Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus", "September", "Oktober", "November", "Desember" }));
+        jBulanKejadian.addActionListener(this::jBulanKejadianActionPerformed);
 
-        jComboBox5.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Tahun", "2020", "2021", "2022", "2023", "2024", "2025", "2026" }));
+        jTahunKejadian.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Tahun", "2020", "2021", "2022", "2023", "2024", "2025", "2026" }));
+
+        jDeskripsi.setColumns(20);
+        jDeskripsi.setRows(5);
+        jScrollPane1.setViewportView(jDeskripsi);
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
         jPanel5Layout.setHorizontalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel5Layout.createSequentialGroup()
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(jPanel5Layout.createSequentialGroup()
                         .addGap(36, 36, 36)
                         .addComponent(jLabel1))
@@ -478,27 +482,27 @@ public class FormLaporan extends javax.swing.JFrame {
                             .addComponent(jLabel2)
                             .addComponent(jLabel3)
                             .addComponent(jLabel5)
-                            .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jJenisKekerasan, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel5Layout.createSequentialGroup()
-                                .addComponent(jRadioButton1)
+                                .addComponent(jCeklisSudah)
                                 .addGap(29, 29, 29)
-                                .addComponent(jRadioButton2))
+                                .addComponent(jCeklisBelum))
                             .addComponent(jLabel4)
-                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLokasiKejadian, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addComponent(jComboBox5, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jComboBox4, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jComboBox3, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                                .addComponent(jTahunKejadian, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jBulanKejadian, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jTanggalKejadian, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                         .addGap(29, 29, 29)
                         .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel5Layout.createSequentialGroup()
-                                .addComponent(jButton1)
+                                .addComponent(btnBatal)
                                 .addGap(47, 47, 47)
-                                .addComponent(jButton2))
+                                .addComponent(btnKirimLaporan))
                             .addComponent(jLabel6)
                             .addComponent(jLabel76)
-                            .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 263, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(jHubungan, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jScrollPane1))))
                 .addContainerGap(81, Short.MAX_VALUE))
         );
         jPanel5Layout.setVerticalGroup(
@@ -512,25 +516,28 @@ public class FormLaporan extends javax.swing.JFrame {
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel6)
                     .addComponent(jLabel2))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jJenisKekerasan, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jLabel3)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jComboBox3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 10, Short.MAX_VALUE)
-                        .addComponent(jComboBox4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jTextField2))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jComboBox5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(24, 24, 24)
+                        .addComponent(jTanggalKejadian, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jBulanKejadian, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jTahunKejadian, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(24, 24, 24))
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addGap(16, 16, 16)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addComponent(jLabel4)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel76)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLokasiKejadian, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel5Layout.createSequentialGroup()
@@ -538,14 +545,14 @@ public class FormLaporan extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(jRadioButton1)
-                                .addComponent(jRadioButton2))
-                            .addComponent(jButton1))
+                                .addComponent(jCeklisSudah)
+                                .addComponent(jCeklisBelum))
+                            .addComponent(btnBatal))
                         .addGap(36, 36, 36))
                     .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jHubungan, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jButton2)
+                        .addComponent(btnKirimLaporan)
                         .addGap(38, 38, 38))))
         );
 
@@ -570,73 +577,73 @@ public class FormLaporan extends javax.swing.JFrame {
                 .addGap(0, 0, 0)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, 413, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, 423, Short.MAX_VALUE))
+                .addGap(0, 0, 0)
                 .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void jLokasiKejadianActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jLokasiKejadianActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_jLokasiKejadianActionPerformed
 
-    private void jRadioButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton2ActionPerformed
+    private void jCeklisBelumActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCeklisBelumActionPerformed
 
-    }//GEN-LAST:event_jRadioButton2ActionPerformed
+    }//GEN-LAST:event_jCeklisBelumActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-    Dashboard dashboard = new Dashboard();
-    dashboard.setVisible(true);
-    this.dispose();
-    }//GEN-LAST:event_jButton3ActionPerformed
+    private void btnBerandaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBerandaActionPerformed
+        Dashboard dashboard = new Dashboard();
+        dashboard.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btnBerandaActionPerformed
 
-    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-    this.dispose();
-    new FormLaporan().setVisible(true);
-    }//GEN-LAST:event_jButton5ActionPerformed
+    private void btnBuatLaporanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuatLaporanActionPerformed
+        this.dispose();
+        new FormLaporan().setVisible(true);
+    }//GEN-LAST:event_btnBuatLaporanActionPerformed
 
-    private void jComboBox3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox3ActionPerformed
+    private void jTanggalKejadianActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTanggalKejadianActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBox3ActionPerformed
+    }//GEN-LAST:event_jTanggalKejadianActionPerformed
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-    ForumDiskusi forum = new ForumDiskusi();
-    forum.setVisible(true);
-    this.dispose();
-    }//GEN-LAST:event_jButton4ActionPerformed
+    private void btnBuatPostinganActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuatPostinganActionPerformed
+        ForumDiskusi forum = new ForumDiskusi();
+        forum.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btnBuatPostinganActionPerformed
 
-    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
-    FormArtikelEdukasi artikel = new FormArtikelEdukasi();
-    artikel.setVisible(true);
-    this.dispose();
-    }//GEN-LAST:event_jButton6ActionPerformed
+    private void btnArtikelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnArtikelActionPerformed
+        FormArtikelEdukasi artikel = new FormArtikelEdukasi();
+        artikel.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btnArtikelActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-    jComboBox1.setSelectedIndex(0);
-    jComboBox2.setSelectedIndex(0);
-    jComboBox3.setSelectedIndex(0);
-    jComboBox4.setSelectedIndex(0);
-    jComboBox5.setSelectedIndex(0);
+    private void btnBatalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBatalActionPerformed
+        jJenisKekerasan.setSelectedIndex(0);
+        jHubungan.setSelectedIndex(0);
+        jTanggalKejadian.setSelectedIndex(0);
+        jBulanKejadian.setSelectedIndex(0);
+        jTahunKejadian.setSelectedIndex(0);
 
-    jTextField1.setText("");
-    jTextField2.setText("");
+        jLokasiKejadian.setText("");
+        jDeskripsi.setText("");
 
-    bgStatusLaporan.clearSelection();
-    }//GEN-LAST:event_jButton1ActionPerformed
+        bgStatusLaporan.clearSelection();
+    }//GEN-LAST:event_btnBatalActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-                                               // 1. Ambil data dari input Swing kamu
-        String kategoriKekerasan = jComboBox1.getSelectedItem().toString(); // Contoh: KDRT
-        String lokasi = jTextField1.getText().trim();                       // Contoh: Jakarta
-        String deskripsiKejadian = jTextField2.getText().trim();             // Contoh: Cerita singkat...
-        String hubunganPelaku = jComboBox2.getSelectedItem().toString();    // Contoh: Pasangan
+    private void btnKirimLaporanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnKirimLaporanActionPerformed
+        // 1. Ambil data dari input Swing kamu
+        String kategoriKekerasan = jJenisKekerasan.getSelectedItem().toString(); // Contoh: KDRT
+        String lokasi = jLokasiKejadian.getText().trim();                       // Contoh: Jakarta
+        String deskripsiKejadian = jDeskripsi.getText().trim();             // Contoh: Cerita singkat...
+        String hubunganPelaku = jHubungan.getSelectedItem().toString();    // Contoh: Pasangan
 
         // 2. Validasi input teks default kosong
-        if (lokasi.isEmpty() || lokasi.equals("Kota / Daerah Kejadian") || 
-            deskripsiKejadian.isEmpty() || deskripsiKejadian.equals("Ceritakan apa yang terjadi secara singkat")) {
-            
+        if (lokasi.isEmpty() || lokasi.equals("Kota / Daerah Kejadian")
+                || deskripsiKejadian.isEmpty() || deskripsiKejadian.equals("Ceritakan apa yang terjadi secara singkat")) {
+
             JOptionPane.showMessageDialog(this, "Silakan lengkapi Lokasi dan Deskripsi kejadian terlebih dahulu.");
             return;
         }
@@ -648,9 +655,9 @@ public class FormLaporan extends javax.swing.JFrame {
         // 4. Panggil DAO untuk eksekusi ke MySQL
         dao.LaporanDAO lDao = new dao.LaporanDAO();
         boolean sukses = lDao.kirimLaporanLengkap(
-                session.Session.id, 
-                judulOtomatis, 
-                kategoriKekerasan, 
+                session.Session.id,
+                judulOtomatis,
+                kategoriKekerasan,
                 isiLengkap
         );
 
@@ -659,13 +666,17 @@ public class FormLaporan extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(
                     this,
                     "Laporan berhasil dikirim.\nTerima kasih telah melapor. Identitas Anda aman.");
-            
+
             this.dispose();
             new Dashboard().setVisible(true);
         } else {
             JOptionPane.showMessageDialog(this, "Gagal mengirim laporan. Periksa kembali konsol error NetBeans.");
         }
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_btnKirimLaporanActionPerformed
+
+    private void jBulanKejadianActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBulanKejadianActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jBulanKejadianActionPerformed
 
     /**
      * @param args the command line arguments
@@ -694,19 +705,24 @@ public class FormLaporan extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.ButtonGroup bgStatusLaporan;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
-    private javax.swing.JComboBox<String> jComboBox1;
-    private javax.swing.JComboBox<String> jComboBox2;
-    private javax.swing.JComboBox<String> jComboBox3;
-    private javax.swing.JComboBox<String> jComboBox4;
-    private javax.swing.JComboBox<String> jComboBox5;
+    private javax.swing.JButton btnArtikel;
+    private javax.swing.JButton btnBatal;
+    private javax.swing.JButton btnBeranda;
+    private javax.swing.JButton btnBuatLaporan;
+    private javax.swing.JButton btnBuatPostingan;
+    private javax.swing.JButton btnKirimLaporan;
+    private javax.swing.JLabel jArtikelEdukasi;
+    private javax.swing.JLabel jBeranda2;
+    private javax.swing.JComboBox<String> jBulanKejadian;
+    private javax.swing.JRadioButton jCeklisBelum;
+    private javax.swing.JRadioButton jCeklisSudah;
     private javax.swing.JLabel jDashboardHeader;
+    private javax.swing.JTextArea jDeskripsi;
+    private javax.swing.JLabel jForumDiskusi;
     private javax.swing.JLabel jHerVoiceHeader;
+    private javax.swing.JComboBox<String> jHubungan;
+    private javax.swing.JComboBox<String> jJenisKekerasan;
+    private javax.swing.JLabel jKonselorOnline;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -720,11 +736,8 @@ public class FormLaporan extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel74;
     private javax.swing.JLabel jLabel76;
     private javax.swing.JLabel jLabel77;
-    private javax.swing.JLabel jLabel79;
-    private javax.swing.JLabel jLabel81;
-    private javax.swing.JLabel jLabel82;
-    private javax.swing.JLabel jLabel86;
-    private javax.swing.JLabel jLabel87;
+    private javax.swing.JLabel jLaporanKasus;
+    private javax.swing.JTextField jLokasiKejadian;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel20;
@@ -738,9 +751,8 @@ public class FormLaporan extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel31;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
-    private javax.swing.JRadioButton jRadioButton1;
-    private javax.swing.JRadioButton jRadioButton2;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JComboBox<String> jTahunKejadian;
+    private javax.swing.JComboBox<String> jTanggalKejadian;
     // End of variables declaration//GEN-END:variables
 }

@@ -49,14 +49,14 @@ public class RegisterFrame extends javax.swing.JFrame {
         txtEmail = new javax.swing.JTextField();
         lblEmail = new javax.swing.JLabel();
         lblPassword = new javax.swing.JLabel();
-        txtPassword = new javax.swing.JTextField();
         lblDaftarSebagai = new javax.swing.JLabel();
-        txtUlangiPassword = new javax.swing.JTextField();
         lblKonfirmasiPassword = new javax.swing.JLabel();
         cmbRole = new javax.swing.JComboBox<>();
         chkAnonim = new javax.swing.JCheckBox();
         btnRegister = new javax.swing.JButton();
         lblLoginLink = new javax.swing.JLabel();
+        jPasswordField = new javax.swing.JPasswordField();
+        jKonfirmasiPassword = new javax.swing.JPasswordField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("HerVoice - Register");
@@ -193,10 +193,8 @@ public class RegisterFrame extends javax.swing.JFrame {
         lblNama.setForeground(new java.awt.Color(90, 90, 90));
         lblNama.setText("Nama Lengkap");
 
-        txtNama.setText("Masukkan nama lengkap");
         txtNama.addActionListener(this::txtNamaActionPerformed);
 
-        txtEmail.setText("contoh@email.com");
         txtEmail.addActionListener(this::txtEmailActionPerformed);
 
         lblEmail.setFont(new java.awt.Font("Segoe UI", 0, 11)); // NOI18N
@@ -207,21 +205,15 @@ public class RegisterFrame extends javax.swing.JFrame {
         lblPassword.setForeground(new java.awt.Color(90, 90, 90));
         lblPassword.setText("Password");
 
-        txtPassword.setText("Min. 8 karakter");
-        txtPassword.addActionListener(this::txtPasswordActionPerformed);
-
         lblDaftarSebagai.setFont(new java.awt.Font("Segoe UI", 0, 11)); // NOI18N
         lblDaftarSebagai.setForeground(new java.awt.Color(90, 90, 90));
         lblDaftarSebagai.setText("Daftar sebagai");
-
-        txtUlangiPassword.setText("Ulangi password");
-        txtUlangiPassword.addActionListener(this::txtUlangiPasswordActionPerformed);
 
         lblKonfirmasiPassword.setFont(new java.awt.Font("Segoe UI", 0, 11)); // NOI18N
         lblKonfirmasiPassword.setForeground(new java.awt.Color(90, 90, 90));
         lblKonfirmasiPassword.setText("Konfirmasi Password");
 
-        cmbRole.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Member (Pengguna Umum)" }));
+        cmbRole.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Member (Pengguna Umum)", "Admin" }));
         cmbRole.addActionListener(this::cmbRoleActionPerformed);
 
         chkAnonim.setForeground(new java.awt.Color(119, 47, 80));
@@ -238,6 +230,10 @@ public class RegisterFrame extends javax.swing.JFrame {
         lblLoginLink.setForeground(new java.awt.Color(150, 120, 130));
         lblLoginLink.setText("Sudah punya akun? Masuk di sini");
 
+        jPasswordField.setText("jPasswordField1");
+
+        jKonfirmasiPassword.setText("jPasswordField2");
+
         javax.swing.GroupLayout pnlRegisterFormLayout = new javax.swing.GroupLayout(pnlRegisterForm);
         pnlRegisterForm.setLayout(pnlRegisterFormLayout);
         pnlRegisterFormLayout.setHorizontalGroup(
@@ -246,48 +242,52 @@ public class RegisterFrame extends javax.swing.JFrame {
                 .addGroup(pnlRegisterFormLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(pnlRegisterFormLayout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(lblSubtitle))
+                        .addComponent(txtNama))
                     .addGroup(pnlRegisterFormLayout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(lblNama))
+                        .addComponent(txtEmail))
                     .addGroup(pnlRegisterFormLayout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(txtNama, javax.swing.GroupLayout.PREFERRED_SIZE, 325, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(cmbRole, 0, 325, Short.MAX_VALUE))
                     .addGroup(pnlRegisterFormLayout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(txtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 325, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jPasswordField))
                     .addGroup(pnlRegisterFormLayout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(lblEmail))
+                        .addComponent(jKonfirmasiPassword))
                     .addGroup(pnlRegisterFormLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(lblPassword))
-                    .addGroup(pnlRegisterFormLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(txtPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 325, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(pnlRegisterFormLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(lblDaftarSebagai))
-                    .addGroup(pnlRegisterFormLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(lblKonfirmasiPassword))
-                    .addGroup(pnlRegisterFormLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(pnlRegisterFormLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(txtUlangiPassword, javax.swing.GroupLayout.DEFAULT_SIZE, 325, Short.MAX_VALUE)
-                            .addComponent(cmbRole, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                    .addGroup(pnlRegisterFormLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(pnlRegisterFormLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(lblLoginLink, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(chkAnonim)))
-                    .addGroup(pnlRegisterFormLayout.createSequentialGroup()
-                        .addGap(138, 138, 138)
-                        .addComponent(btnRegister))
-                    .addGroup(pnlRegisterFormLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(lblTitle)))
-                .addContainerGap(119, Short.MAX_VALUE))
+                        .addGroup(pnlRegisterFormLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(pnlRegisterFormLayout.createSequentialGroup()
+                                .addContainerGap()
+                                .addComponent(lblSubtitle))
+                            .addGroup(pnlRegisterFormLayout.createSequentialGroup()
+                                .addContainerGap()
+                                .addComponent(lblNama))
+                            .addGroup(pnlRegisterFormLayout.createSequentialGroup()
+                                .addContainerGap()
+                                .addComponent(lblEmail))
+                            .addGroup(pnlRegisterFormLayout.createSequentialGroup()
+                                .addContainerGap()
+                                .addComponent(lblPassword))
+                            .addGroup(pnlRegisterFormLayout.createSequentialGroup()
+                                .addContainerGap()
+                                .addComponent(lblDaftarSebagai))
+                            .addGroup(pnlRegisterFormLayout.createSequentialGroup()
+                                .addContainerGap()
+                                .addComponent(lblKonfirmasiPassword))
+                            .addGroup(pnlRegisterFormLayout.createSequentialGroup()
+                                .addContainerGap()
+                                .addGroup(pnlRegisterFormLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(lblLoginLink, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(chkAnonim)))
+                            .addGroup(pnlRegisterFormLayout.createSequentialGroup()
+                                .addGap(138, 138, 138)
+                                .addComponent(btnRegister))
+                            .addGroup(pnlRegisterFormLayout.createSequentialGroup()
+                                .addContainerGap()
+                                .addComponent(lblTitle)))
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addGap(119, 119, 119))
         );
         pnlRegisterFormLayout.setVerticalGroup(
             pnlRegisterFormLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -307,11 +307,11 @@ public class RegisterFrame extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(lblPassword)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txtPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jPasswordField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(lblKonfirmasiPassword)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txtUlangiPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jKonfirmasiPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(lblDaftarSebagai)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -366,14 +366,6 @@ public class RegisterFrame extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtEmailActionPerformed
 
-    private void txtPasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPasswordActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtPasswordActionPerformed
-
-    private void txtUlangiPasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUlangiPasswordActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtUlangiPasswordActionPerformed
-
     private void cmbRoleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbRoleActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_cmbRoleActionPerformed
@@ -385,8 +377,10 @@ public class RegisterFrame extends javax.swing.JFrame {
     private void btnRegisterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegisterActionPerformed
     String nama = txtNama.getText().trim();
     String email = txtEmail.getText().trim();
-    String password = txtPassword.getText().trim();
-    String konfirmasi = txtUlangiPassword.getText().trim();
+    String password;
+        password = jPasswordField.getText().trim();
+    String konfirmasi;
+        konfirmasi = jKonfirmasiPassword.getText().trim();
     String role = cmbRole.getSelectedItem().toString();
 
     if (nama.isEmpty()) {
@@ -409,25 +403,25 @@ public class RegisterFrame extends javax.swing.JFrame {
 
     if (password.isEmpty()) {
         JOptionPane.showMessageDialog(this, "Password tidak boleh kosong!");
-        txtPassword.requestFocus();
+        jPasswordField.requestFocus();
         return;
     }
 
     if (password.length() < 8) {
         JOptionPane.showMessageDialog(this, "Password minimal 8 karakter!");
-        txtPassword.requestFocus();
+        jPasswordField.requestFocus();
         return;
     }
 
     if (konfirmasi.isEmpty()) {
         JOptionPane.showMessageDialog(this, "Konfirmasi password tidak boleh kosong!");
-        txtUlangiPassword.requestFocus();
+        jKonfirmasiPassword.requestFocus();
         return;
     }
 
     if (!password.equals(konfirmasi)) {
         JOptionPane.showMessageDialog(this, "Konfirmasi password tidak sama!");
-        txtUlangiPassword.requestFocus();
+        jKonfirmasiPassword.requestFocus();
         return;
     }
     UserDAO dao = new UserDAO();
@@ -483,6 +477,8 @@ if (berhasil) {
     private javax.swing.JButton btnRegister;
     private javax.swing.JCheckBox chkAnonim;
     private javax.swing.JComboBox<String> cmbRole;
+    private javax.swing.JPasswordField jKonfirmasiPassword;
+    private javax.swing.JPasswordField jPasswordField;
     private javax.swing.JLabel lblAppName;
     private javax.swing.JLabel lblDaftarSebagai;
     private javax.swing.JLabel lblDescription;
@@ -506,7 +502,5 @@ if (berhasil) {
     private javax.swing.JSeparator sepBranding;
     private javax.swing.JTextField txtEmail;
     private javax.swing.JTextField txtNama;
-    private javax.swing.JTextField txtPassword;
-    private javax.swing.JTextField txtUlangiPassword;
     // End of variables declaration//GEN-END:variables
 }
